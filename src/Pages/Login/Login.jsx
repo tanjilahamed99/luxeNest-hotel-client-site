@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Context from "../../Hooks/Contex";
 import Swal from "sweetalert2";
 
 const Login = () => {
 
     const [see, setSee] = useState(true)
+    const navigate = useNavigate()
 
     const { loginUser } = Context()
 
@@ -23,6 +24,7 @@ const Login = () => {
                     'Login Successful!',
                     'success'
                 )
+                navigate('/')
             })
             .catch(error => {
                 Swal.fire({

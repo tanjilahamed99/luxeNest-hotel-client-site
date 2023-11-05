@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Context from "../../Hooks/Contex";
 import { updateProfile } from "firebase/auth";
 import auth from "../../Firebase/firebse";
@@ -9,6 +9,7 @@ import Swal from "sweetalert2";
 
 const SignUp = () => {
     const [see, setSee] = useState(true)
+    const navigate = useNavigate()
 
     const { createUser } = Context()
 
@@ -31,7 +32,8 @@ const SignUp = () => {
                         'Create account Successful!',
                         'success'
                     )
-                }).catch(() => {})
+                    navigate('/')
+                }).catch(() => { })
             })
             .catch(error => {
                 Swal.fire({

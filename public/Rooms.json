@@ -1,0 +1,102 @@
+[
+    {
+        "roomType": "Standard Single",
+        "pricePerNight": 100,
+        "occupancy": 1,
+        "description": "A cozy and comfortable single room with a city view, ideal for solo travelers. This room includes modern amenities such as free Wi-Fi, a flat-screen TV, and a mini-bar. Room size is approximately 20 square meters. The room has a rating of 4.5 stars and features a single bed for your convenience.",
+        "amenities": [
+            "Free Wi-Fi",
+            "Flat-screen TV",
+            "Mini-bar"
+        ],
+        "available": true,
+        "img": "https://i.ibb.co/X8Rys6h/hutomo-abrianto-LT0-q-OWa-M1k-unsplash.jpg",
+        "roomSize": "20 sqm",
+        "rating": 4.5,
+        "beds": 1
+    },
+    {
+        "roomType": "Standard Double",
+        "pricePerNight": 150,
+        "occupancy": 2,
+        "description": "A spacious and inviting double room with a garden view, perfect for couples or friends. This room offers free Wi-Fi, a flat-screen TV, and a mini-bar. With a room size of around 30 square meters, it has a high rating of 4.7 stars and features one comfortable double bed.",
+        "amenities": [
+            "Free Wi-Fi",
+            "Flat-screen TV",
+            "Mini-bar"
+        ],
+        "available": true,
+        "img": "https://i.ibb.co/kcBbKbF/toa-heftiba-bc-LE7re-XFLM-unsplash.jpg",
+        "roomSize": "30 sqm",
+        "rating": 4.7,
+        "beds": 1
+    },
+    {
+        "roomType": "Deluxe Suite",
+        "pricePerNight": 300,
+        "occupancy": 4,
+        "description": "Experience luxury in our deluxe suite with a private balcony and stunning ocean views. This spacious suite offers free Wi-Fi, a flat-screen TV, a mini-bar, and ocean view. With a room size of 50 square meters, it boasts an impressive rating of 4.9 stars and features two comfortable beds.",
+        "amenities": [
+            "Free Wi-Fi",
+            "Flat-screen TV",
+            "Mini-bar",
+            "Ocean View"
+        ],
+        "available": true,
+        "img": "room3.jpg",
+        "roomSize": "https://i.ibb.co/0tx3D8t/nrd-C-v-ZO7e-HJEM-unsplash.jpg",
+        "rating": 4.9,
+        "beds": 2
+    },
+    {
+        "roomType": "Executive King",
+        "pricePerNight": 250,
+        "occupancy": 2,
+        "description": "Indulge in an elegant room with a king-size bed and mesmerizing city skyline views. This room offers free Wi-Fi, a flat-screen TV, and a mini-bar. With a room size of around 40 square meters, it maintains a rating of 4.6 stars and features one plush king-size bed.",
+        "amenities": [
+            "Free Wi-Fi",
+            "Flat-screen TV",
+            "Mini-bar"
+        ],
+        "available": true,
+        "img": "https://i.ibb.co/hdkLnq2/becca-tapert-F0-Zi-HWli-GGM-unsplash.jpg",
+        "roomSize": "40 sqm",
+        "rating": 4.6,
+        "beds": 1
+    },
+    {
+        "roomType": "Family Suite",
+        "pricePerNight": 350,
+        "occupancy": 6,
+        "description": "Our family suite is perfect for larger groups, featuring a spacious living area and modern amenities, including a kitchenette. The suite is 70 square meters in size and boasts a high rating of 4.8 stars, accommodating up to three beds.",
+        "amenities": [
+            "Free Wi-Fi",
+            "Flat-screen TV",
+            "Mini-bar",
+            "Kitchenette"
+        ],
+        "available": true,
+        "img": "https://i.ibb.co/qCHmKvB/frames-for-your-heart-8-V45f-Gy-Wz4-unsplash.jpg",
+        "roomSize": "70 sqm",
+        "rating": 4.8,
+        "beds": 3
+    },
+    {
+        "roomType": "Presidential Suite",
+        "pricePerNight": 1000,
+        "occupancy": 2,
+        "description": "Experience the epitome of luxury in our presidential suite, featuring a private Jacuzzi and panoramic city views. This expansive suite is 100 square meters in size and holds a perfect rating of 5.0 stars. It offers one luxurious king-size bed.",
+        "amenities": [
+            "Free Wi-Fi",
+            "Flat-screen TV",
+            "Mini-bar",
+            "Jacuzzi",
+            "City View"
+        ],
+        "available": true,
+        "img": "https://i.ibb.co/zfQJ8Zb/chuttersnap-ft-G8-Wc-Hwg7o-unsplash.jpg",
+        "roomSize": "100 sqm",
+        "rating": 5.0,
+        "beds": 1
+    }
+]

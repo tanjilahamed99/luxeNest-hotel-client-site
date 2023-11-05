@@ -1,3 +1,4 @@
+import Footer from "../../Shered/Footer/Footer";
 import Navbar from "../../Shered/Navbar/Navbar";
 import SimpleMap from "./Map/Map";
 import Sliders from "./Sliders/Sliders";
@@ -14,6 +15,7 @@ const Home = () => {
             <Testimonial></Testimonial>
             <SpecialOffer></SpecialOffer>
             <SimpleMap></SimpleMap>
+            <Footer></Footer>
         </div>
     );
 };

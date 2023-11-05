@@ -3,7 +3,7 @@ import { FaBed, FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Rating from 'react-rating';
 
 const DisplayRooms = ({ rooms }) => {
-    const { roomType, img, pricePerNight, occupancy, available, roomSize, rating, beds } = rooms
+    const { roomType, img, pricePerNight, roomSize, rating, beds } = rooms
     return (
         <div className='mx-auto shadow-md  hover:shadow-lg pb-5'>
             <div className='relative'>

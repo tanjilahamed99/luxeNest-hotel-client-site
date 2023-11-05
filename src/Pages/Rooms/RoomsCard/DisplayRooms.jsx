@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
 import { FaBed, FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Rating from 'react-rating';
+import { Link } from 'react-router-dom';
 
 const DisplayRooms = ({ rooms }) => {
-    const { roomType, img, pricePerNight, roomSize, rating, beds } = rooms
+    const { _id, roomType, img, pricePerNight, roomSize, rating, beds } = rooms
+
+
     return (
-        <div className='mx-auto shadow-md  hover:shadow-lg pb-5'>
+        <Link to={`/roomDetail/${_id}`} className='mx-auto shadow-md  hover:shadow-lg pb-5'>
             <div className='relative'>
                 <img className='h-[250px] w-[300px]' src={img} alt="" />
                 <div className='flex items-center gap-2 absolute top-3 right-3 bg-blue-500 p-3 text-white rounded-md '>
@@ -30,7 +33,7 @@ const DisplayRooms = ({ rooms }) => {
                     />
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 

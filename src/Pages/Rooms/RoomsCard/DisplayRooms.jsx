@@ -4,7 +4,7 @@ import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
 
 const DisplayRooms = ({ rooms }) => {
-    const { _id, roomType, img, pricePerNight, roomSize, rating, beds } = rooms
+    const { _id, roomType, img, pricePerNight, roomSize, rating, beds, available } = rooms
 
 
     return (
@@ -19,11 +19,16 @@ const DisplayRooms = ({ rooms }) => {
             <div className='px-5 space-y-2 mt-4'>
                 <h4 className='font-semibold text-sm'>LUXURY ROOM</h4>
                 <h2 className='text-2xl font-bold text-[#1e1e1e]'>{roomType}</h2>
-                <p className='font-medium text-sm text-[#616161]'>{roomSize}/Rooms</p>
+                <div className='flex justify-between items-center'>
+                    <p className='font-medium text-sm text-[#616161]'>{roomSize}/Rooms</p>
+                    <p className='font-medium'>{available ? 'Available' : 'Already booked'}</p>
+                </div>
             </div>
             <hr className='w-full border my-3' />
             <div className='mx-5 flex items-center justify-between'>
-                <h2 className='flex gap-2 items-center text-[#616161]'><FaBed className='text-2xl'></FaBed><span className='text-lg'>{beds} King Beds</span></h2>
+                <div className=''>
+                    <h2 className='flex gap-2 items-center text-[#616161]'><FaBed className='text-2xl'></FaBed><span className='text-lg'>{beds} King Beds</span></h2>
+                </div>
                 <div>
                     <Rating
                         placeholderRating={rating}

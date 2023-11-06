@@ -1,6 +1,24 @@
 import { Link, NavLink } from "react-router-dom";
+import Context from "../../Hooks/Contex";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+
+    const { user, logoutUser } = Context()
+
+    const handleLogOut = () => {
+        logoutUser()
+            .then(() => {
+                Swal.fire(
+                    'Good job!',
+                    'Log out Successful',
+                    'success'
+                )
+            })
+            .catch(() => {
+
+            })
+    }
 
     const ulLinks = <>
         <li>
@@ -21,6 +39,16 @@ const Navbar = () => {
                 }
             >
                 Rooms
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                to="/myBookings"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-amber-800" : ""
+                }
+            >
+                My Bookings
             </NavLink>
         </li>
         <li>
@@ -54,10 +82,11 @@ const Navbar = () => {
             </NavLink>
         </li>
         <div className="navbar-end  md:hidden">
-            <a className="btn btn-outline">Login</a>
+            {
+                user ? <a onClick={handleLogOut} className="btn btn-outline hidden md:flex">Logout</a> : <Link to={'/login'}><a className="btn btn-outline hidden md:flex">Login</a></Link>
+            }
         </div>
     </>
-
 
     return (
         <div className="navbar bg-base-100 px-20">
@@ -88,7 +117,9 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end ">
-                <Link to={'/login'}><a className="btn btn-outline hidden md:flex">Login</a></Link>
+                {
+                    user ? <a onClick={handleLogOut} className="btn btn-outline hidden md:flex">Logout</a> : <Link to={'/login'}><a className="btn btn-outline hidden md:flex">Login</a></Link>
+                }
             </div>
         </div>
     );

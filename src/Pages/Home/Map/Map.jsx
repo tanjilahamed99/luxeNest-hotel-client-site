@@ -33,7 +33,7 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 
 AnyReactComponent.propTypes = {
-    text: PropTypes.object
+    text: PropTypes.string
 };
 
 export default SimpleMap

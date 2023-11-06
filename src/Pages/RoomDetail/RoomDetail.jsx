@@ -6,9 +6,12 @@ import Footer from "../../Shered/Footer/Footer";
 import Rating from "react-rating";
 import axios from "axios";
 import Swal from "sweetalert2";
+import Context from "../../Hooks/Contex";
 
 
 const RoomDetail = () => {
+
+    const { user } = Context()
 
     const { _id, roomType, pricePerNight, description, amenities, available, img, roomSize, rating, beds } = useLoaderData()
 
@@ -20,28 +23,37 @@ const RoomDetail = () => {
         const checkOut = form.checkOut.value
 
         const newBooking = {
-            roomType, pricePerNight, description, amenities, available, img, roomSize, rating, beds, checkIn, checkOut
+            roomType, pricePerNight, description, amenities, available, img, roomSize, rating, beds, checkIn, checkOut, email: user.email
         }
 
         const updateRoom = {
-            available,
+            available: false,
             _id
         }
 
-        axios.post(`http://localhost:5000/roomBooking`, newBooking)
-            .then(res => {
-                if (res.data.acknowledged) {
-                    axios.put('http://localhost:5000/updateRoom', updateRoom)
-                        .then((res) => {
-                            Swal.fire(
-                                'Good job!',
-                                'Booking Successful',
-                                'success'
-                            )
-                            console.log(res.data)
-                        })
-                }
+        if (available) {
+            axios.post(`http://localhost:5000/roomBooking`, newBooking)
+                .then(res => {
+                    if (res.data.acknowledged) {
+                        axios.put('http://localhost:5000/updateRoom', updateRoom)
+                            .then((res) => {
+                                Swal.fire(
+                                    'Good job!',
+                                    'Booking Successful',
+                                    'success'
+                                )
+                                console.log(res.data)
+                            })
+                    }
+                })
+        } else {
+            Swal.fire({
+                title: 'already booked',
+                text: 'see another',
+                icon: 'error',
+                confirmButtonText: 'Cool'
             })
+        }
 
     }
 
@@ -126,6 +138,7 @@ const RoomDetail = () => {
                         </div>
                     </div>
                 </div>
+                {/* review */}
             </div>
             <Footer></Footer>
         </div>

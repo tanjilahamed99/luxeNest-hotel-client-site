@@ -60,6 +60,9 @@ const MyBookings = () => {
             <Navbar></Navbar>
             <MyBookingBanner></MyBookingBanner>
             <h2 className="text-3xl font-bold mt-20 text-center mb-5">My Rooms</h2>
+            {/* <h2 className="px-20">{
+                moment().format('L')
+            }</h2> */}
             <div className="grid grid-cols-3 items-center">
                 {
                     myRoom.map(room => <DisplayMyRooms key={room._id} myRoom={room}

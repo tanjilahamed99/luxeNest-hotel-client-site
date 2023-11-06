@@ -7,6 +7,7 @@ import Rooms from "../Pages/Rooms/Rooms";
 import RoomDetail from "../Pages/RoomDetail/RoomDetail";
 import MyBookings from "../Pages/MyBookings/MyBookings";
 import PrivateRoute from "./PrivateRoute";
+import UpdateBookingDate from "../Pages/UpdateBookingDate/UpdateBookingDate";
 
 
 const Routes = createBrowserRouter([
@@ -39,6 +40,11 @@ const Routes = createBrowserRouter([
             {
                 path: '/myBookings',
                 element: <PrivateRoute><MyBookings></MyBookings></PrivateRoute>
+            },
+            {
+                path: '/updateBookingDate/:id',
+                element: <UpdateBookingDate></UpdateBookingDate>,
+                loader: ({ params }) => fetch(`http://localhost:5000/updateDate/${params.id}`)
             }
         ]
     }

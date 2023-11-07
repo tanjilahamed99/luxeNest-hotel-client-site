@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { FaEyeSlash, FaEye } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { FaEyeSlash, FaEye, FaGooglePlusG } from "react-icons/fa";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Context from "../../Hooks/Contex";
 import Swal from "sweetalert2";
 
@@ -8,8 +8,9 @@ const Login = () => {
 
     const [see, setSee] = useState(true)
     const navigate = useNavigate()
+    const location = useLocation()
 
-    const { loginUser } = Context()
+    const { loginUser, googleLogin } = Context()
 
     const handleLogin = e => {
         e.preventDefault()
@@ -24,7 +25,7 @@ const Login = () => {
                     'Login Successful!',
                     'success'
                 )
-                navigate('/')
+                location.state ? navigate(location.state) : navigate('/')
             })
             .catch(error => {
                 Swal.fire({
@@ -36,6 +37,26 @@ const Login = () => {
             })
 
 
+    }
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(() => {
+                Swal.fire(
+                    'Good job!',
+                    'Login Successful!',
+                    'success'
+                )
+                location.state ? navigate(location.state) : navigate('/')
+            })
+            .catch(error => {
+                Swal.fire({
+                    title: error.message,
+                    text: 'Do you want to continue',
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                })
+            })
     }
 
 
@@ -73,6 +94,7 @@ const Login = () => {
                         </div>
                         <Link to={'/signUP'}><p className="text-white">New here? <span className="font-bold">Sign Up</span></p></Link>
                     </form>
+                    <button onClick={handleGoogleLogin} className="btn btn-outline mt-4 text-white"><FaGooglePlusG className="text-2xl"></FaGooglePlusG> google</button>
                 </div>
             </div>
         </div>

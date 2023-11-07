@@ -41,16 +41,18 @@ const Navbar = () => {
                 Rooms
             </NavLink>
         </li>
-        <li>
-            <NavLink
-                to="/myBookings"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-amber-800" : ""
-                }
-            >
-                My Bookings
-            </NavLink>
-        </li>
+        {
+            user && <li>
+                <NavLink
+                    to="/myBookings"
+                    className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "text-amber-800" : ""
+                    }
+                >
+                    My Bookings
+                </NavLink>
+            </li>
+        }
         <li>
             <NavLink
                 to="/"
@@ -83,14 +85,21 @@ const Navbar = () => {
         </li>
         <div className="navbar-end  md:hidden">
             {
-                user ? <a onClick={handleLogOut} className="btn btn-outline hidden md:flex">Logout</a> : <Link to={'/login'}><a className="btn btn-outline hidden md:flex">Login</a></Link>
+                user ?<button onClick={handleLogOut} className="btn">Logout</button> : <li ><Link to={'/login'}><button className="btn btn-outline">Login</button></Link></li>
+            }
+            {
+                user && <div className="avatar mx-3 online">
+                    <div className="w-10 h-10 rounded-full ">
+                        <img src={user.photoURL} />
+                    </div>
+                </div>
             }
         </div>
     </>
 
     return (
-        <div className="navbar bg-base-100 px-20">
-            <div className="navbar-start">
+        <div className="navbar bg-base-100 lg:px-20">
+            <div className="navbar-start  flex  items-center gap-20 lg:gap-0 ">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -101,8 +110,8 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <div className="flex items-center gap-3">
-                    <img className="w-20" src="https://i.ibb.co/rbRG54Z/download.png" alt="" />
+                <div className="flex items-center gap-3 mx-auto lg:mx-0">
+                    <img className="md:w-20 w-10" src="https://i.ibb.co/rbRG54Z/download.png" alt="" />
                     <div className="">
                         <h2 className="text-2xl font-bold">LuxeNest</h2>
                         <p>Luxury Hotel</p>
@@ -116,7 +125,14 @@ const Navbar = () => {
                     }
                 </ul>
             </div>
-            <div className="navbar-end ">
+            <div className="navbar-end">
+                {
+                    user && <div className="avatar mx-3 online hidden md:flex">
+                        <div className="w-10 h-10 rounded-full ">
+                            <img src={user.photoURL} />
+                        </div>
+                    </div>
+                }
                 {
                     user ? <a onClick={handleLogOut} className="btn btn-outline hidden md:flex">Logout</a> : <Link to={'/login'}><a className="btn btn-outline hidden md:flex">Login</a></Link>
                 }

@@ -16,6 +16,7 @@ const RoomDetail = () => {
     const { _id, roomType, pricePerNight, description, amenities, available, img, roomSize, rating, beds } = useLoaderData()
 
 
+
     const handleRoomBooking = e => {
         e.preventDefault()
         const form = e.target
@@ -23,7 +24,7 @@ const RoomDetail = () => {
         const checkOut = form.checkOut.value
 
         const newBooking = {
-            roomType, pricePerNight, description, amenities, available, img, roomSize, rating, beds, checkIn, checkOut, email: user.email
+            roomType, pricePerNight, description, amenities, available, img, roomSize, rating, beds, checkIn, checkOut, email: user?.email
         }
 
         const updateRoom = {
@@ -31,31 +32,42 @@ const RoomDetail = () => {
             _id
         }
 
-        if (available) {
-            axios.post(`http://localhost:5000/roomBooking`, newBooking)
-                .then(res => {
-                    if (res.data.acknowledged) {
-                        axios.put('http://localhost:5000/updateRoom', updateRoom)
-                            .then((res) => {
-                                Swal.fire(
-                                    'Good job!',
-                                    'Booking Successful',
-                                    'success'
-                                )
-                                console.log(res.data)
-                            })
-                    }
+        if (user) {
+            if (available) {
+                axios.post(`http://localhost:5000/roomBooking`, newBooking)
+                    .then(res => {
+                        if (res.data.acknowledged) {
+                            axios.put('http://localhost:5000/updateRoom', updateRoom)
+                                .then((res) => {
+                                    Swal.fire(
+                                        'Good job!',
+                                        'Booking Successful',
+                                        'success'
+                                    )
+                                    console.log(res.data)
+                                })
+                        }
+                    })
+            } else {
+                Swal.fire({
+                    title: 'already booked',
+                    text: 'see another',
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
                 })
+            }
         } else {
             Swal.fire({
-                title: 'already booked',
+                title: 'Login first',
                 text: 'see another',
                 icon: 'error',
-                confirmButtonText: 'Cool'
+                confirmButtonText:'error'
             })
         }
 
+
     }
+
 
 
     return (
@@ -65,10 +77,10 @@ const RoomDetail = () => {
             <div className="my-20">
                 <div className="hero my-10 w-full">
                     <div className="hero-content flex-col lg:flex-row w-full gap-5">
-                        <div className="w-[60%]">
+                        <div className="lg:w-[60%] w-full">
                             <img src={img} className=" h-[550px] w-full rounded-lg shadow-2xl" />
                         </div>
-                        <div className="w-[40%]">
+                        <div className="lg:w-[40%] w-full">
                             <form onSubmit={handleRoomBooking} className="card-body w-full bg-[#f8f6f3]">
                                 <div>
                                     <h2 className="bg-white p-4 font-semibold text-lg">Room : <span className="text-[#c19d68]">{roomType}</span></h2>
@@ -95,8 +107,8 @@ const RoomDetail = () => {
                         </div>
                     </div>
                 </div>
-                <div className="mt-5 px-12 flex gap-20">
-                    <div className="w-[60%]">
+                <div className="mt-5 px-12 flex md:flex-row flex-col gap-20">
+                    <div className="lg:w-[60%]">
                         <h2 className="font-semibold ">LUXURY ROOM</h2>
                         <h1 className="font-bold text-3xl  my-3">{roomType}</h1>
                         <p>{description}</p>
@@ -111,7 +123,7 @@ const RoomDetail = () => {
                                 />
                             </div>
                         </div>
-                        <div className="flex items-center mt-10 gap-10">
+                        <div className="flex md:flex-row flex-col items-center mt-10 gap-10">
 
                             <div className="space-y-3">
                                 <h2 className="flex gap-2 items-center text-2xl"><FaArrowAltCircleLeft className="text-2xl text-[#616161]"></FaArrowAltCircleLeft>Check In</h2>
@@ -125,7 +137,7 @@ const RoomDetail = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-[40%]">
+                    <div className="md:w-[40%]">
                         <h2 className="font-semibold text-3xl">Amenities</h2>
                         <div className="mt-4 space-y-3">
                             <p className="text-lg font-semibold">{amenities[0]}</p>

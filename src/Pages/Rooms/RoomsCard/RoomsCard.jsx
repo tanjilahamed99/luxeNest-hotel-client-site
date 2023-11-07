@@ -15,7 +15,7 @@ const RoomsCard = () => {
     return (
         <div className="my-20">
             <h2 className="mb-2 text-center text-3xl font-semibold">LuxeNest ROOMS & SUITES</h2>
-            <p className="mx-96 text-center">Proactively morph optimal infomediaries rather than accurate expertise. Intrinsicly progressive resources rather than resource-leveling</p>
+            <p className="xl:mx-96 md:mx-10 text-center">Proactively morph optimal infomediaries rather than accurate expertise. Intrinsicly progressive resources rather than resource-leveling</p>
             <div>
                 <details className="dropdown container pl-20 " >
                     <summary className="m-1 btn btn-outline">Short By price</summary>
@@ -25,7 +25,7 @@ const RoomsCard = () => {
                     </ul>
                 </details>
             </div>
-            <div className="grid gap-10 justify-center mx-auto container mt-10 grid-cols-1 md:grid-cols-3 items-center ">
+            <div className="grid gap-10 justify-center md:mx-auto md:grid-cols-2 container mx-5 mt-10 grid-cols-1 lg:grid-cols-3 items-center ">
                 {
                     rooms.map(room => <DisplayRooms key={room._id} rooms={room}></DisplayRooms>)
                 }

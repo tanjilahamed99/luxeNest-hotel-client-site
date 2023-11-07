@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGooglePlusG } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import Context from "../../Hooks/Contex";
 import { updateProfile } from "firebase/auth";
@@ -11,7 +11,7 @@ const SignUp = () => {
     const [see, setSee] = useState(true)
     const navigate = useNavigate()
 
-    const { createUser } = Context()
+    const { createUser,googleLogin } = Context()
 
     const handleSignUp = e => {
         e.preventDefault()
@@ -45,6 +45,27 @@ const SignUp = () => {
             })
 
 
+    }
+
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(() => {
+                Swal.fire(
+                    'Good job!',
+                    'Login Successful!',
+                    'success'
+                )
+                location.state ? navigate(location.state) : navigate('/')
+            })
+            .catch(error => {
+                Swal.fire({
+                    title: error.message,
+                    text: 'Do you want to continue',
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                })
+            })
     }
 
 
@@ -89,6 +110,7 @@ const SignUp = () => {
                         </div>
                         <Link to={'/login'}><p className="text-white">Already have account? <span className="font-bold">Login</span></p></Link>
                     </form>
+                    <button onClick={handleGoogleLogin} className="btn btn-outline mt-4 text-white"><FaGooglePlusG className="text-2xl"></FaGooglePlusG> google</button>
                 </div>
             </div>
         </div>

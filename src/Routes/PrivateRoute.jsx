@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import Context from '../Hooks/Contex';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 
 const PrivateRoute = ({ children }) => {
-    const navigate = useNavigate()
+    const location = useLocation()
     const { user, loading } = Context()
     if (loading) {
         return <span className="loading loading-spinner loading-lg"></span>
@@ -12,7 +12,7 @@ const PrivateRoute = ({ children }) => {
         return children
     }
     else {
-        navigate('/login')
+        <Navigate state={location.pathname} to={'/login'}></Navigate>
     }
 };
 

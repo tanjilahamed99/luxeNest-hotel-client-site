@@ -8,6 +8,7 @@ import RoomDetail from "../Pages/RoomDetail/RoomDetail";
 import MyBookings from "../Pages/MyBookings/MyBookings";
 import PrivateRoute from "./PrivateRoute";
 import UpdateBookingDate from "../Pages/UpdateBookingDate/UpdateBookingDate";
+import ErrorPage from "../404Page/ErrorPage";
 
 
 const Routes = createBrowserRouter([
@@ -15,6 +16,7 @@ const Routes = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -34,7 +36,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path: '/roomDetail/:id',
-                element: <PrivateRoute><RoomDetail></RoomDetail></PrivateRoute>,
+                element: <RoomDetail></RoomDetail>,
                 loader: ({ params }) => fetch(`http://localhost:5000/roomDetail/${params.id}`)
             },
             {

@@ -3,6 +3,7 @@ import { FaEyeSlash, FaEye, FaGooglePlusG } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Context from "../../Hooks/Contex";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const Login = () => {
 
@@ -18,6 +19,8 @@ const Login = () => {
         const email = form.email.value
         const password = form.password.value
 
+        const tokenData = { email }
+
         loginUser(email, password)
             .then(() => {
                 Swal.fire(
@@ -25,6 +28,8 @@ const Login = () => {
                     'Login Successful!',
                     'success'
                 )
+                axios.post('http://localhost:5000/jwt', tokenData, { withCredentials: true })
+                    .then(res => console.log(res.data))
                 location.state ? navigate(location.state) : navigate('/')
             })
             .catch(error => {

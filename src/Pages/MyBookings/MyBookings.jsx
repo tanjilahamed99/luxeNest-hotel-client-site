@@ -13,7 +13,7 @@ const MyBookings = () => {
     const [myRoom, setMyRoom] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/roomBooking?email=${user.email}`)
+        axios.get(`http://localhost:5000/roomBooking?email=${user.email}`, { withCredentials: true })
             .then(res => setMyRoom(res.data))
     }, [user])
 

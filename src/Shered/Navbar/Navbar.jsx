@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import Context from "../../Hooks/Contex";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const Navbar = () => {
 
@@ -14,6 +15,8 @@ const Navbar = () => {
                     'Log out Successful',
                     'success'
                 )
+                axios.post('http://localhost:5000/logout', { email: user.email }, { withCredentials: true })
+                    .then(res => console.log(res.data))
             })
             .catch(() => {
 
@@ -85,7 +88,7 @@ const Navbar = () => {
         </li>
         <div className="navbar-end  md:hidden">
             {
-                user ?<button onClick={handleLogOut} className="btn">Logout</button> : <li ><Link to={'/login'}><button className="btn btn-outline">Login</button></Link></li>
+                user ? <button onClick={handleLogOut} className="btn">Logout</button> : <li ><Link to={'/login'}><button className="btn btn-outline">Login</button></Link></li>
             }
             {
                 user && <div className="avatar mx-3 online">

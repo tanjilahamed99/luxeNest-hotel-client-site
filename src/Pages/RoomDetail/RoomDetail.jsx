@@ -15,7 +15,8 @@ import DisplayReview from "./DisplayReview";
 const RoomDetail = () => {
 
     const { user } = Context()
-    const [review, setReview] = useState(false)
+    const [review, setReview] = useState([])
+    const [seeReview, setSeeReview] = useState(false)
 
     const { _id, roomType, pricePerNight, description, amenities, available, img, roomSize, rating, beds } = useLoaderData()
 
@@ -26,7 +27,7 @@ const RoomDetail = () => {
             .then(res => setReview(res?.data))
     }, [roomType])
 
-    // console.log()
+    console.log()
 
 
     const handleRoomBooking = e => {
@@ -50,13 +51,13 @@ const RoomDetail = () => {
                     .then(res => {
                         if (res.data.acknowledged) {
                             axios.put('http://localhost:5000/updateRoom', updateRoom)
-                                .then((res) => {
+                                .then(() => {
                                     Swal.fire(
                                         'Good job!',
                                         'Booking Successful',
                                         'success'
                                     )
-                                    console.log(res.data)
+                                    setSeeReview(true)
                                 })
                         }
                     })
@@ -89,10 +90,20 @@ const RoomDetail = () => {
         const reviewRating = form.rating.value
         const comment = form.comment.value
 
-        const reviewData = { userName, reviewRating, comment, roomType, time }
+        const reviewData = {
+            userName, reviewRating, comment, roomType, time, img: user.photoURL
+        }
 
         axios.post('http://localhost:5000/review', reviewData)
-            .then(res => console.log(res.data))
+            .then(res => {
+                if (res.data.acknowledged) {
+                    Swal.fire(
+                        'Good job!',
+                        'Review posted',
+                        'success'
+                    )
+                }
+            })
 
     }
 
@@ -182,7 +193,7 @@ const RoomDetail = () => {
                 <div className="px-12  my-10">
                     <h2 className="text-2xl font-semibold">Room Reviews</h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+                    <div className="grid grid-cols-1 justify-center md:grid-cols-2 items-center gap-10">
 
                         {
                             review?.map(info => <DisplayReview key={info._id} info={info}></DisplayReview>)
@@ -191,34 +202,41 @@ const RoomDetail = () => {
 
                     </div>
 
-                    <form onSubmit={handleReview} className="card-body mx-auto grid grid-cols-2 gap-5 justify-center items-center w-[60%]">
-                        <div className="form-control mx-auto w-full">
-                            <label className="label">
-                                <span className="label-text">User Name</span>
-                            </label>
-                            <input name="userName" required type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                    {
+                        seeReview && <div className="my-20">
+                            <h2 className="text-center text-2xl font-semibold">Set Your own Review</h2>
+                            <p className="text-center xl:mx-72 mx-10 font-medium my-2"> A hotel room is a carefully crafted and welcoming space within a hotel that serves as a travelers home away from home. Designed for comfort and relaxation </p>
+                            <form onSubmit={handleReview} className="card-body mx-auto grid grid-cols-2 gap-5 justify-center items-center w-[60%]">
+                                <div className="form-control mx-auto w-full">
+                                    <label className="label">
+                                        <span className="label-text">User Name</span>
+                                    </label>
+                                    <input name="userName" required type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                                </div>
+                                <div className="form-control mx-auto w-full">
+                                    <label className="label">
+                                        <span className="label-text">Rating</span>
+                                    </label>
+                                    <select name="rating" required className="select select-bordered w-full max-w-xs">
+                                        <option disabled selected>Rating</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div className="form-control  col-span-2">
+                                    <label className="label">
+                                        <span className="label-text">Comment</span>
+                                    </label>
+                                    <textarea name="comment" required className="textarea textarea-bordered" placeholder="comment"></textarea>
+                                </div>
+                                <input className="btn btn-outline col-span-2" type="submit" value="Submit" />
+                            </form>
                         </div>
-                        <div className="form-control mx-auto w-full">
-                            <label className="label">
-                                <span className="label-text">Rating</span>
-                            </label>
-                            <select name="rating" required className="select select-bordered w-full max-w-xs">
-                                <option disabled selected>Rating</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
-                        <div className="form-control  col-span-2">
-                            <label className="label">
-                                <span className="label-text">Comment</span>
-                            </label>
-                            <textarea name="comment" required className="textarea textarea-bordered" placeholder="comment"></textarea>
-                        </div>
-                        <input className="btn btn-outline col-span-2" type="submit" value="Submit" />
-                    </form>
+
+                    }
                 </div>
             </div>
             <Footer></Footer>

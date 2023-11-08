@@ -10,7 +10,6 @@ const DisplayMyRooms = ({ myRoom, handleDelete }) => {
         roomType
     }
 
-
     return (
         <div className='mx-auto shadow-md  hover:shadow-lg pb-5'>
             <div className='relative'>
@@ -30,7 +29,7 @@ const DisplayMyRooms = ({ myRoom, handleDelete }) => {
             </div>
             <hr className='w-full border my-3' />
             <div className='mx-5 flex items-center justify-between'>
-                <button onClick={() => handleDelete(_id, updateRoom)} className='btn btn-outline  text-xl'><AiTwotoneDelete></AiTwotoneDelete></button>
+                <button onClick={() => handleDelete(_id, updateRoom,checkIn)} className='btn btn-outline  text-xl'><AiTwotoneDelete></AiTwotoneDelete></button>
                 <Link to={`/updateBookingDate/${_id}`}><button className='btn btn-outline '>Update</button></Link>
             </div>
         </div>

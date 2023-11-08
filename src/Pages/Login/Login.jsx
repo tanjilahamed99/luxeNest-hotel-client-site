@@ -28,7 +28,7 @@ const Login = () => {
                     'Login Successful!',
                     'success'
                 )
-                axios.post('http://localhost:5000/jwt', tokenData, { withCredentials: true })
+                axios.post('https://luxe-next-server.vercel.app/jwt', tokenData, { withCredentials: true })
                     .then(res => console.log(res.data))
                 location.state ? navigate(location.state) : navigate('/')
             })
@@ -52,7 +52,7 @@ const Login = () => {
                     'Login Successful!',
                     'success'
                 )
-                axios.post('http://localhost:5000/jwt', { ami: 'asi' }, { withCredentials: true })
+                axios.post('https://luxe-next-server.vercel.app/jwt', { ami: 'asi' }, { withCredentials: true })
                     .then(res => console.log(res.data))
                 location.state ? navigate(location.state) : navigate('/')
             })

@@ -9,10 +9,11 @@ const RoomsCard = () => {
 
 
     useEffect(() => {
-        axios(`http://localhost:5000/rooms?shortFlied=${shortFlied}&shortOrder=${shortOrder}`)
+        axios(`https://luxe-next-server.vercel.app/rooms?shortFlied=${shortFlied}&shortOrder=${shortOrder}`)
             .then(res => setRooms(res.data))
     }, [shortOrder, shortFlied])
 
+    console.log(rooms)
 
     return (
         <div className="my-20">
@@ -29,10 +30,10 @@ const RoomsCard = () => {
             </div>
             <div className="grid gap-10 container mx-auto   justify-center  md:grid-cols-2 mt-10 grid-cols-1 lg:grid-cols-3 items-center ">
                 {
-                    rooms.map(room => <DisplayRooms key={room._id}  room={room}></DisplayRooms>)
+                    rooms.map(room => <DisplayRooms key={room._id} room={room}></DisplayRooms>)
                 }
             </div>
-            
+
         </div>
     );
 };

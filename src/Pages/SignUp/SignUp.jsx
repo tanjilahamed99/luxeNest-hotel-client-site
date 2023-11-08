@@ -33,7 +33,9 @@ const SignUp = () => {
                         'Create account Successful!',
                         'success'
                     )
-                    navigate('/')
+                    axios.post('https://luxe-next-server.vercel.app/jwt', {ami:'asi'}, { withCredentials: true })
+                        .then(res => console.log(res.data))
+                        location.state ? navigate(location.state) : navigate('/')
                 }).catch(() => { })
             })
             .catch(error => {
@@ -57,7 +59,7 @@ const SignUp = () => {
                     'Login Successful!',
                     'success'
                 )
-                axios.post('http://localhost:5000/jwt', { ami: 'asi' }, { withCredentials: true })
+                axios.post('https://luxe-next-server.vercel.app/jwt', { ami: 'asi' }, { withCredentials: true })
                     .then(res => console.log(res.data))
                 location.state ? navigate(location.state) : navigate('/')
             })

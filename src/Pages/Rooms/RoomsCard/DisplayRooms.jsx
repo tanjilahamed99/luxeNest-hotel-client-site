@@ -30,12 +30,12 @@ const DisplayRooms = ({ room }) => {
                     <h2 className='flex gap-2 items-center text-[#616161]'><FaBed className='text-2xl'></FaBed><span className='text-lg'>{beds} King Beds</span></h2>
                 </div>
                 <div>
-                    <Rating className="text-2xl"
-                        placeholderRating={rating}
-                        emptySymbol={<FaRegStar></FaRegStar>}
-                        placeholderSymbol={<FaStar></FaStar>}
-                        fullSymbol={<FaStar></FaStar>}
-                    />
+                        <Rating className="text-2xl"
+                            placeholderRating={rating}
+                            emptySymbol={<FaRegStar></FaRegStar>}
+                            placeholderSymbol={<FaStar></FaStar>}
+                            fullSymbol={<FaStar></FaStar>}
+                        />
                 </div>
             </div>
         </Link>

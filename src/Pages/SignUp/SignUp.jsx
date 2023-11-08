@@ -5,13 +5,14 @@ import Context from "../../Hooks/Contex";
 import { updateProfile } from "firebase/auth";
 import auth from "../../Firebase/firebse";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 
 const SignUp = () => {
     const [see, setSee] = useState(true)
     const navigate = useNavigate()
 
-    const { createUser,googleLogin } = Context()
+    const { createUser, googleLogin } = Context()
 
     const handleSignUp = e => {
         e.preventDefault()
@@ -56,6 +57,8 @@ const SignUp = () => {
                     'Login Successful!',
                     'success'
                 )
+                axios.post('http://localhost:5000/jwt', { ami: 'asi' }, { withCredentials: true })
+                    .then(res => console.log(res.data))
                 location.state ? navigate(location.state) : navigate('/')
             })
             .catch(error => {
@@ -73,7 +76,7 @@ const SignUp = () => {
         <div className="hero min-h-screen bg-base-200 bg-center bg-cover bg-[url(https://i.ibb.co/XF74Hc8/jason-briscoe-e-Lf-QTm-Df-Lk-unsplash.jpg)]" >
             <div className="hero-overlay bg-opacity-80"></div>
             <div className="hero-content w-full flex-col">
-                <div className="card w-[40%]">
+                <div className="card md:w-[50%] lg:w-[40%]">
                     <h2 className="text-center font-bold text-2xl mb-1 text-white">Sign Up</h2>
                     <p className="text-white">Welcome to our secure sign up page. Enter your credentials to access your account and enjoy a personalized experience on our platform</p>
                     <form onSubmit={handleSignUp} className="card-body shadow-2xl shadow-gray-400">

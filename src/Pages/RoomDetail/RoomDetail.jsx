@@ -1,7 +1,7 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Navbar from "../../Shered/Navbar/Navbar";
 import DetailBanner from "./DetailBanner";
-import { FaArrowAltCircleLeft, FaArrowCircleRight, FaCheck, FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { FaArrowAltCircleLeft, FaArrowCircleRight, FaCheck, FaRegStar, FaStar } from "react-icons/fa";
 import Footer from "../../Shered/Footer/Footer";
 import Rating from "react-rating";
 import axios from "axios";
@@ -17,6 +17,7 @@ const RoomDetail = () => {
     const { user } = Context()
     const [review, setReview] = useState([])
     const [seeReview, setSeeReview] = useState(false)
+    const navigate = useNavigate()
 
     const { _id, roomType, pricePerNight, description, amenities, available, img, roomSize, rating, beds } = useLoaderData()
 
@@ -70,12 +71,7 @@ const RoomDetail = () => {
                 })
             }
         } else {
-            Swal.fire({
-                title: 'Login first',
-                text: 'see another',
-                icon: 'error',
-                confirmButtonText: 'error'
-            })
+            navigate('/login')
         }
 
 
@@ -151,13 +147,13 @@ const RoomDetail = () => {
                         <h2 className="font-semibold ">LUXURY ROOM</h2>
                         <h1 className="font-bold text-3xl  my-3">{roomType}</h1>
                         <p>{description}</p>
-                        <div className="my-10 flex items-center gap-5 justify-between">
+                        <div className="my-10 flex flex-col md:flex-row items-center gap-5 justify-between">
                             <h2 className="font-semibold text-lg">Room size: {roomSize}</h2>
                             <div>
                                 <Rating className="text-2xl"
                                     placeholderRating={rating}
                                     emptySymbol={<FaRegStar></FaRegStar>}
-                                    placeholderSymbol={<FaStarHalfAlt></FaStarHalfAlt>}
+                                    placeholderSymbol={<FaStar></FaStar>}
                                     fullSymbol={<FaStar></FaStar>}
                                 />
                             </div>

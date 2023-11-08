@@ -87,6 +87,7 @@ const Navbar = () => {
             </NavLink>
         </li>
         <div className="navbar-end  md:hidden">
+            <hr className="w-full border my-3"/>
             {
                 user ? <button onClick={handleLogOut} className="btn">Logout</button> : <li ><Link to={'/login'}><button className="btn btn-outline">Login</button></Link></li>
             }
@@ -101,7 +102,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-base-100 lg:px-20">
+        <div className="navbar bg-base-100 xl:px-20 lg:px-5">
             <div className="navbar-start  flex  items-center gap-20 lg:gap-0 ">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -137,7 +138,7 @@ const Navbar = () => {
                     </div>
                 }
                 {
-                    user ? <a onClick={handleLogOut} className="btn btn-outline hidden md:flex">Logout</a> : <Link to={'/login'}><a className="btn btn-outline hidden md:flex">Login</a></Link>
+                    user ? <li onClick={handleLogOut} className="btn btn-outline hidden md:flex">Logout</li> : <Link to={'/login'}><li className="btn btn-outline hidden md:flex">Login</li></Link>
                 }
             </div>
         </div>

@@ -11,7 +11,7 @@ const DisplaySlider = () => {
     })
 
     return (
-        <div ref={sliderRef} className="keen-slider my-5">
+        <div data-aos="fade-up" data-aos-duration="500" ref={sliderRef} className="keen-slider my-5">
             <img className="keen-slider__slide number-slide1 w-[200px] h-[200px] md:w-[300px] md:h-[300px]" src="https://i.ibb.co/FgJjZqx/paolo-nicolello-2g-Ox-Kj594n-M-unsplash.jpg" alt="" />
             <img className="keen-slider__slide number-slide2 w-[200px] h-[200px] md:w-[300px] md:h-[300px]" src="https://i.ibb.co/Qfg12zw/edvin-johansson-rlw-E8f8an-Oc-unsplash.jpg" alt="" />
             <img className="keen-slider__slide number-slide3 w-[200px] h-[200px] md:w-[300px] md:h-[300px]" src="https://i.ibb.co/svLmhK5/leisure-beautiful-health-garden-landscape.jpg" alt="" />

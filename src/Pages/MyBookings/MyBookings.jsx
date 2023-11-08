@@ -29,7 +29,7 @@ const MyBookings = () => {
         const days = Math.ceil(time / (1000 * 60 * 60 * 24))
 
 
-        if (days >= 2) {
+        if (days >= 3) {
             Swal.fire({
                 title: "Are you sure?",
                 text: "You won't be able to revert this!",
@@ -80,7 +80,7 @@ const MyBookings = () => {
             <Navbar></Navbar>
             <MyBookingBanner></MyBookingBanner>
             <h2 className="text-3xl font-bold mt-20 text-center mb-5">My Rooms</h2>
-            <div className="grid grid-cols-3 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:grid-cols-3 items-center">
                 {
                     myRoom.map(room => <DisplayMyRooms key={room._id} myRoom={room}
                         handleDelete={handleDelete}></DisplayMyRooms>)

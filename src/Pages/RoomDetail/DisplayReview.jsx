@@ -8,7 +8,7 @@ const DisplayReview = ({ info }) => {
 
     return (
         <div className='mx-auto my-10'>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card bg-base-100 shadow-xl">
                 <div className="card-body">
                     <div className='flex items-center gap-5'>
                         <img className='w-16 h-16 rounded-full' src={img} alt="" />
@@ -18,12 +18,12 @@ const DisplayReview = ({ info }) => {
                         </div>
                     </div>
                     <div className='flex items-center gap-5'>
-                        <Rating className="text-2xl"
-                            placeholderRating={reviewRating}
-                            emptySymbol={<FaRegStar></FaRegStar>}
-                            placeholderSymbol={<FaStar></FaStar>}
-                            fullSymbol={<FaStar></FaStar>}
-                        />
+                    <Rating className="text-2xl"
+                        placeholderRating={reviewRating}
+                        emptySymbol={<FaRegStar></FaRegStar>}
+                        placeholderSymbol={<FaStar></FaStar>}
+                        fullSymbol={<FaStar></FaStar>}
+                    />
                     </div>
                     <p>{comment}</p>
                 </div>

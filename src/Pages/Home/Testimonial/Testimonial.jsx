@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 const Testimonial = () => {
     return (
         <div data-aos="fade-up"
-            data-aos-duration="3000" className="container mx-auto my-20">
+            data-aos-delay="50" className="container mx-auto my-20">
             <h2 className="text-xl font-medium text-center">OUR TESTIMONIALS</h2>
             <h2 className="text-3xl font-semibold text-center my-2 text-[#1e1e1e]">Feedback From Our Guests</h2>
             <p className="font-medium text-center md:mx-10 xl:mx-96 text-[#616161]">A wonderful serenity has taken possession of my entire soul, like these royella dolor consectetur adipiscing elit dos eiusmod tempor incididunt resort sweet spring</p>
@@ -50,6 +50,9 @@ const Testimonial = () => {
                         Staying at [Your Hotel Name] was an exceptional experience. The warm and welcoming staff, luxurious accommodations, and breathtaking views made our visit unforgettable. We were truly pampered from the moment we arrived. Thank you for providing us with a memorable and relaxing stay. We can not wait to return
                     </p>
                 </div>
+            </div>
+            <div data-aos="fade-up" data-aos-duration="500" className="w-[80%] mx-auto mt-10">
+                <h2 className="text-3xl text-center font-semibold">Trusted Companies</h2>
             </div>
         </div>
     );

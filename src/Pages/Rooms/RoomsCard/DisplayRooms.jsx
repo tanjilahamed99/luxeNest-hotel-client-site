@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
-import { FaBed, FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { FaBed, FaRegStar, FaStar } from "react-icons/fa";
 import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
 
-const DisplayRooms = ({ rooms }) => {
-    const { _id, roomType, img, pricePerNight, roomSize, rating, beds, available } = rooms
+const DisplayRooms = ({ room }) => {
+    const { _id, roomType, img, pricePerNight, roomSize, rating, beds, available } = room
 
 
     return (
-        <Link to={`/roomDetail/${_id}`} className='mx-auto shadow-md  hover:shadow-lg pb-5'>
-            <div className='relative'>
-                <img className='h-[250px] w-[300px]' src={img} alt="" />
+        <Link to={`/roomDetail/${_id}`} className=' shadow-md mx-auto  hover:shadow-lg pb-5'>
+            <div className='relative '>
+                <img className='h-[250px] w-[300px] mx-auto' src={img} alt="" />
                 <div className='flex items-center gap-2 absolute top-3 right-3 bg-blue-500 p-3 text-white rounded-md '>
                     <p className=''>${pricePerNight}</p>
                     <h2>/Per Night</h2>
@@ -30,10 +30,10 @@ const DisplayRooms = ({ rooms }) => {
                     <h2 className='flex gap-2 items-center text-[#616161]'><FaBed className='text-2xl'></FaBed><span className='text-lg'>{beds} King Beds</span></h2>
                 </div>
                 <div>
-                    <Rating
+                    <Rating className="text-2xl"
                         placeholderRating={rating}
                         emptySymbol={<FaRegStar></FaRegStar>}
-                        placeholderSymbol={<FaStarHalfAlt></FaStarHalfAlt>}
+                        placeholderSymbol={<FaStar></FaStar>}
                         fullSymbol={<FaStar></FaStar>}
                     />
                 </div>
@@ -43,7 +43,7 @@ const DisplayRooms = ({ rooms }) => {
 };
 
 DisplayRooms.propTypes = {
-    rooms: PropTypes.object
+    room: PropTypes.object
 };
 
 export default DisplayRooms;

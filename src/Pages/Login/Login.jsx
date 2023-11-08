@@ -52,6 +52,8 @@ const Login = () => {
                     'Login Successful!',
                     'success'
                 )
+                axios.post('http://localhost:5000/jwt', { ami: 'asi' }, { withCredentials: true })
+                    .then(res => console.log(res.data))
                 location.state ? navigate(location.state) : navigate('/')
             })
             .catch(error => {
@@ -71,7 +73,7 @@ const Login = () => {
         <div className="hero min-h-screen bg-base-200 bg-center bg-cover bg-[url(https://i.ibb.co/XF74Hc8/jason-briscoe-e-Lf-QTm-Df-Lk-unsplash.jpg)]" >
             <div className="hero-overlay bg-opacity-80"></div>
             <div className="hero-content w-full flex-col ">
-                <div className="card w-[40%]">
+                <div className="card lg:w-[40%] md:w-[50%]">
                     <h2 className="text-center font-bold text-2xl mb-1 text-white">Please Login?</h2>
                     <p className="text-white">Welcome to our secure login page. Enter your credentials to access your account and enjoy a personalized experience on our platform</p>
                     <form onSubmit={handleLogin} className="card-body shadow-2xl shadow-gray-400">

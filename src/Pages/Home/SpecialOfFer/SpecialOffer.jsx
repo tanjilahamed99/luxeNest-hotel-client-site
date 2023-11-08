@@ -9,7 +9,7 @@ const SpecialOffer = () => {
                     <div className="bg-center bg-cover w-[300px] h-[300px] hero" style={{ backgroundImage: 'url(https://i.ibb.co/4pm06bY/markus-spiske-g5-ZIXjz-RGds-unsplash.jpg)' }}>
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="text-center text-white">
-                            <div className=" md:-mt-28 mb-36">
+                            <div className="  mb-36">
                                 <h2 className="text-2xl font-bold ">LuxeNest</h2>
                                 <p>Luxury Hotel</p>
                             </div>
@@ -19,7 +19,7 @@ const SpecialOffer = () => {
                     <div className="bg-center bg-cover w-[300px] h-[300px] hero" style={{ backgroundImage: 'url(https://i.ibb.co/j6v90ZJ/kenny-eliason-i-Aftd-Icgp-Fc-unsplash.jpg)' }}>
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="text-center text-white">
-                            <div className="md:-mt-28 mb-36 text-center">
+                            <div className=" mb-36 text-center">
                                 <h2 className="text-2xl font-bold ">LuxeNest</h2>
                                 <p>Luxury Hotel</p>
                             </div>
@@ -29,7 +29,7 @@ const SpecialOffer = () => {
                     <div className="bg-center bg-cover w-[300px] h-[300px] hero" style={{ backgroundImage: 'url(https://i.ibb.co/dM34pVy/frames-for-your-heart-Fqqi-Av-Jejto-unsplash.jpg)' }}>
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className=" text-center text-white">
-                            <div className="md:-mt-28 mb-36">
+                            <div className=" mb-36">
                                 <h2 className="text-2xl font-bold text-center mx-auto">LuxeNest</h2>
                                 <p className="text-center">Luxury Hotel</p>
                             </div>

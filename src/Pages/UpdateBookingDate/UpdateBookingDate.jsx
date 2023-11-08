@@ -45,10 +45,10 @@ const UpdateBookingDate = () => {
             <Navbar></Navbar>
             <div className="hero my-10 w-full">
                 <div className="hero-content flex-col lg:flex-row w-full gap-5">
-                    <div className="w-[60%]">
+                    <div className="lg:w-[60%] w-[80%] mx-auto">
                         <img src={img} className=" h-[500px] w-full rounded-lg shadow-2xl" />
                     </div>
-                    <div className="w-[40%]">
+                    <div className="lg:w-[40%] w-[80%]" >
                         <form onSubmit={handleUpdateDate} className="card-body w-full bg-[#f8f6f3]">
                             <div>
                                 <h2 className="bg-white p-4 font-semibold text-lg">Room : <span className="text-[#c19d68]">{roomType}</span></h2>

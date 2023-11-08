@@ -205,7 +205,7 @@ const RoomDetail = () => {
                     {
                         seeReview && <div className="my-20">
                             <h2 className="text-center text-2xl font-semibold">Set Your own Review</h2>
-                            <p className="text-center xl:mx-72 mx-10 font-medium my-2"> A hotel room is a carefully crafted and welcoming space within a hotel that serves as a travelers home away from home. Designed for comfort and relaxation </p>
+                            <p className="text-center xl:mx-72 mx-10 font-medium my-2"> A hotel room is a carefully crafted and welcoming space within a hotel that serves  a travelers home away from home. Designed for comfort and relaxation </p>
                             <form onSubmit={handleReview} className="card-body mx-auto grid grid-cols-2 gap-5 justify-center items-center w-[60%]">
                                 <div className="form-control mx-auto w-full">
                                     <label className="label">

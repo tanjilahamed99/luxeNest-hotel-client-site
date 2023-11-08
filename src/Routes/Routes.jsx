@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import UpdateBookingDate from "../Pages/UpdateBookingDate/UpdateBookingDate";
 import ErrorPage from "../404Page/ErrorPage";
 import About from "../Pages/About/About";
+import Faq from "../Pages/Faq/Faq";
 
 
 const Routes = createBrowserRouter([
@@ -38,6 +39,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/about',
                 element: <About></About>
+            },
+            {
+                path: '/faq',
+                element: <Faq></Faq>
             },
             {
                 path: '/roomDetail/:id',

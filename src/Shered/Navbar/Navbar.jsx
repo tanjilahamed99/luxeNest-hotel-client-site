@@ -68,16 +68,6 @@ const Navbar = () => {
             </NavLink>
         </li>
         <li>
-            <NavLink
-                to="/"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-amber-800" : ""
-                }
-            >
-                Gallery
-            </NavLink>
-        </li>
-        <li>
             <DisplayCustomToast></DisplayCustomToast>
         </li>
         <div className="navbar-end  md:hidden">
@@ -134,7 +124,7 @@ const Navbar = () => {
                 {
 
 
-                    user ? <li onClick={handleLogOut} className="btn btn-outline hidden md:flex"><DisplayCustomToast></DisplayCustomToast></li> : <Link to={'/login'}><li className="btn btn-outline hidden md:flex">Login</li></Link>
+                    user ? <li onClick={handleLogOut} className="btn btn-outline hidden md:flex">Logout</li> : <Link to={'/login'}><li className="btn btn-outline hidden md:flex">Login</li></Link>
                 }
             </div>
         </div>

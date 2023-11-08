@@ -51,9 +51,6 @@ const Testimonial = () => {
                     </p>
                 </div>
             </div>
-            <div data-aos="fade-up" data-aos-duration="500" className="w-[80%] mx-auto mt-10">
-                <h2 className="text-3xl text-center font-semibold">Trusted Companies</h2>
-            </div>
         </div>
     );
 };

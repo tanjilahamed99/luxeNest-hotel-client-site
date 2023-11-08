@@ -9,6 +9,7 @@ import MyBookings from "../Pages/MyBookings/MyBookings";
 import PrivateRoute from "./PrivateRoute";
 import UpdateBookingDate from "../Pages/UpdateBookingDate/UpdateBookingDate";
 import ErrorPage from "../404Page/ErrorPage";
+import About from "../Pages/About/About";
 
 
 const Routes = createBrowserRouter([
@@ -33,6 +34,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/rooms',
                 element: <Rooms></Rooms>
+            },
+            {
+                path: '/about',
+                element: <About></About>
             },
             {
                 path: '/roomDetail/:id',

@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAGdHutE-18kuBioyc9XePJjS0a2iQSzzw",
-    authDomain: "luxenest-hotel.firebaseapp.com",
-    projectId: "luxenest-hotel",
-    storageBucket: "luxenest-hotel.appspot.com",
-    messagingSenderId: "590037401883",
-    appId: "1:590037401883:web:72a7a3bcf88b70af7ed3be"
+    apiKey: import.meta.env.VITE_apiKey,
+    authDomain: import.meta.env.VITE_authDomain,
+    projectId: import.meta.env.VITE_projectId,
+    storageBucket: import.meta.env.VITE_storageBucket,
+    messagingSenderId: import.meta.env.VITE_messagingSenderId,
+    appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase

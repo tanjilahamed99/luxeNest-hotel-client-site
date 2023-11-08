@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import Context from "../../Hooks/Contex";
 import Swal from "sweetalert2";
 import axios from "axios";
+import DisplayCustomToast from "../../Custom Toast/DisplayCustomToast";
 
 const Navbar = () => {
 
@@ -58,7 +59,7 @@ const Navbar = () => {
         }
         <li>
             <NavLink
-                to="/"
+                to="/about"
                 className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "text-amber-800" : ""
                 }
@@ -73,21 +74,14 @@ const Navbar = () => {
                     isPending ? "pending" : isActive ? "text-amber-800" : ""
                 }
             >
-                Contacts
-            </NavLink>
-        </li>
-        <li>
-            <NavLink
-                to="/"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-amber-800" : ""
-                }
-            >
                 Gallery
             </NavLink>
         </li>
+        <li>
+            <DisplayCustomToast></DisplayCustomToast>
+        </li>
         <div className="navbar-end  md:hidden">
-            <hr className="w-full border my-3"/>
+            <hr className="w-full border my-3" />
             {
                 user ? <button onClick={handleLogOut} className="btn">Logout</button> : <li ><Link to={'/login'}><button className="btn btn-outline">Login</button></Link></li>
             }
@@ -138,7 +132,9 @@ const Navbar = () => {
                     </div>
                 }
                 {
-                    user ? <li onClick={handleLogOut} className="btn btn-outline hidden md:flex">Logout</li> : <Link to={'/login'}><li className="btn btn-outline hidden md:flex">Login</li></Link>
+
+
+                    user ? <li onClick={handleLogOut} className="btn btn-outline hidden md:flex"><DisplayCustomToast></DisplayCustomToast></li> : <Link to={'/login'}><li className="btn btn-outline hidden md:flex">Login</li></Link>
                 }
             </div>
         </div>

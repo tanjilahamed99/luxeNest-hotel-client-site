@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Context from "../../Hooks/Contex";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
 
@@ -72,6 +73,11 @@ const Login = () => {
     return (
         <div className="hero min-h-screen bg-base-200 bg-center bg-cover bg-[url(https://i.ibb.co/XF74Hc8/jason-briscoe-e-Lf-QTm-Df-Lk-unsplash.jpg)]" >
             <div className="hero-overlay bg-opacity-80"></div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Login LuxeNest Hotel</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <div className="hero-content w-full flex-col ">
                 <div className="card lg:w-[40%] md:w-[50%]">
                     <h2 className="text-center font-bold text-2xl mb-1 text-white">Please Login?</h2>

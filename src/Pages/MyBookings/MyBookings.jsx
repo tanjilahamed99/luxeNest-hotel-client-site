@@ -7,6 +7,7 @@ import DisplayMyRooms from "./DisplayMyRooms";
 import Footer from "../../Shered/Footer/Footer";
 import Swal from "sweetalert2";
 import moment from "moment";
+import { Helmet } from "react-helmet";
 
 const MyBookings = () => {
 
@@ -77,6 +78,11 @@ const MyBookings = () => {
 
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>My Booking LuxeNest Hotel</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <Navbar></Navbar>
             <MyBookingBanner></MyBookingBanner>
             <h2 className="text-3xl font-bold mt-20 text-center mb-5">My Rooms</h2>

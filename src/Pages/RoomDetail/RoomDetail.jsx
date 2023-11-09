@@ -10,6 +10,7 @@ import Context from "../../Hooks/Contex";
 import { useEffect, useState } from "react";
 import moment from "moment/moment";
 import DisplayReview from "./DisplayReview";
+import { Helmet } from "react-helmet";
 
 
 const RoomDetail = () => {
@@ -107,6 +108,11 @@ const RoomDetail = () => {
 
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Room details LuxeNest Hotel</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <Navbar></Navbar>
             <DetailBanner></DetailBanner>
             <div className="my-20">
@@ -202,7 +208,7 @@ const RoomDetail = () => {
                         seeReview && <div className="my-20">
                             <h2 className="text-center text-2xl font-semibold">Set Your own Review</h2>
                             <p className="text-center xl:mx-72 mx-10 font-medium my-2"> A hotel room is a carefully crafted and welcoming space within a hotel that serves  a travelers home away from home. Designed for comfort and relaxation </p>
-                            <form onSubmit={handleReview} className="card-body mx-auto grid grid-cols-2 gap-5 justify-center items-center w-[60%]">
+                            <form onSubmit={handleReview} className="card-body mx-auto grid md:grid-cols-2 grid-cols-1 gap-5 justify-center items-center w-[95%] lg:w-[60%]">
                                 <div className="form-control mx-auto w-full">
                                     <label className="label">
                                         <span className="label-text">User Name</span>

@@ -1,9 +1,15 @@
+import { Helmet } from "react-helmet";
 import Footer from "../../Shered/Footer/Footer";
 import Navbar from "../../Shered/Navbar/Navbar";
 
 const Faq = () => {
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>FAQ LuxeNest Hotel</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <Navbar></Navbar>
 
             <div className="my-20">

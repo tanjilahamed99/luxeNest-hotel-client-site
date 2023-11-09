@@ -13,8 +13,6 @@ const RoomsCard = () => {
             .then(res => setRooms(res.data))
     }, [shortOrder, shortFlied])
 
-    console.log(rooms)
-
     return (
         <div className="my-20">
             <h2 className="mb-2 text-center text-3xl font-semibold">LuxeNest ROOMS & SUITES</h2>

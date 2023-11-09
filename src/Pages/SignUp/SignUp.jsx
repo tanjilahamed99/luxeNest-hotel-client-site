@@ -6,6 +6,7 @@ import { updateProfile } from "firebase/auth";
 import auth from "../../Firebase/firebse";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 
 const SignUp = () => {
@@ -76,6 +77,11 @@ const SignUp = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200 bg-center bg-cover bg-[url(https://i.ibb.co/XF74Hc8/jason-briscoe-e-Lf-QTm-Df-Lk-unsplash.jpg)]" >
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>sign up LuxeNest Hotel</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <div className="hero-overlay bg-opacity-80"></div>
             <div className="hero-content w-full flex-col">
                 <div className="card md:w-[50%] lg:w-[40%]">

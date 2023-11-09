@@ -4,6 +4,7 @@ import Navbar from "../../Shered/Navbar/Navbar";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const UpdateBookingDate = () => {
     const updateLoaderData = useLoaderData()
@@ -42,6 +43,11 @@ const UpdateBookingDate = () => {
 
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Update Date LuxeNest Hotel</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <Navbar></Navbar>
             <div className="hero my-10 w-full">
                 <div className="hero-content flex-col lg:flex-row w-full gap-5">

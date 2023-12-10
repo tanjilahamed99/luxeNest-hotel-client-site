@@ -5,7 +5,6 @@ import Context from "../../Hooks/Contex";
 import { updateProfile } from "firebase/auth";
 import auth from "../../Firebase/firebse";
 import Swal from "sweetalert2";
-import axios from "axios";
 import { Helmet } from "react-helmet";
 
 
@@ -34,9 +33,7 @@ const SignUp = () => {
                         'Create account Successful!',
                         'success'
                     )
-                    axios.post('https://luxe-next-server.vercel.app/jwt', {ami:'asi'}, { withCredentials: true })
-                        .then(res => console.log(res.data))
-                        location.state ? navigate(location.state) : navigate('/')
+                    location.state ? navigate(location.state) : navigate('/')
                 }).catch(() => { })
             })
             .catch(error => {
@@ -60,8 +57,6 @@ const SignUp = () => {
                     'Login Successful!',
                     'success'
                 )
-                axios.post('https://luxe-next-server.vercel.app/jwt', { ami: 'asi' }, { withCredentials: true })
-                    .then(res => console.log(res.data))
                 location.state ? navigate(location.state) : navigate('/')
             })
             .catch(error => {

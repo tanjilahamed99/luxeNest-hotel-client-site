@@ -203,42 +203,40 @@ const RoomDetail = () => {
 
 
                     </div>
-
-                    {
-                        seeReview && <div className="my-20">
-                            <h2 className="text-center text-2xl font-semibold">Set Your own Review</h2>
-                            <p className="text-center xl:mx-72 mx-10 font-medium my-2"> A hotel room is a carefully crafted and welcoming space within a hotel that serves  a travelers home away from home. Designed for comfort and relaxation </p>
-                            <form onSubmit={handleReview} className="card-body mx-auto grid md:grid-cols-2 grid-cols-1 gap-5 justify-center items-center w-[95%] lg:w-[60%]">
-                                <div className="form-control mx-auto w-full">
-                                    <label className="label">
-                                        <span className="label-text">User Name</span>
-                                    </label>
-                                    <input name="userName" required type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
-                                </div>
-                                <div className="form-control mx-auto w-full">
-                                    <label className="label">
-                                        <span className="label-text">Rating</span>
-                                    </label>
-                                    <select name="rating" required className="select select-bordered w-full max-w-xs">
-                                        <option disabled selected>Rating</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                                <div className="form-control  col-span-2">
-                                    <label className="label">
-                                        <span className="label-text">Comment</span>
-                                    </label>
-                                    <textarea name="comment" required className="textarea textarea-bordered" placeholder="comment"></textarea>
-                                </div>
-                                <input className="btn btn-outline col-span-2" type="submit" value="Submit" />
-                            </form>
-                        </div>
-
-                    }
+                    <div className="my-20">
+                        <h2 className="text-center text-2xl font-semibold">Set Your own Review</h2>
+                        <p className="text-center xl:mx-72 mx-10 font-medium my-2"> A hotel room is a carefully crafted and welcoming space within a hotel that serves  a travelers home away from home. Designed for comfort and relaxation </p>
+                        <form onSubmit={handleReview} className="card-body mx-auto grid md:grid-cols-2 grid-cols-1 gap-5 justify-center items-center w-[95%] lg:w-[60%]">
+                            <div className="form-control mx-auto w-full">
+                                <label className="label">
+                                    <span className="label-text">User Name</span>
+                                </label>
+                                <input name="userName" required type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                            </div>
+                            <div className="form-control mx-auto w-full">
+                                <label className="label">
+                                    <span className="label-text">Rating</span>
+                                </label>
+                                <select name="rating" required className="select select-bordered w-full max-w-xs">
+                                    <option disabled selected>Rating</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div className="form-control  col-span-2">
+                                <label className="label">
+                                    <span className="label-text">Comment</span>
+                                </label>
+                                <textarea name="comment" required className="textarea textarea-bordered" placeholder="comment"></textarea>
+                            </div>
+                            {
+                                seeReview && <input className="btn btn-outline col-span-2" type="submit" value="Submit" />
+                            }
+                        </form>
+                    </div>
                 </div>
             </div>
             <Footer></Footer>

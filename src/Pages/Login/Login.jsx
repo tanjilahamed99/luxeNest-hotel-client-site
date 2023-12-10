@@ -3,10 +3,11 @@ import { FaEyeSlash, FaEye, FaGooglePlusG } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Context from "../../Hooks/Contex";
 import Swal from "sweetalert2";
-import axios from "axios";
 import { Helmet } from "react-helmet";
 
 const Login = () => {
+
+
 
     const [see, setSee] = useState(true)
     const navigate = useNavigate()
@@ -20,8 +21,6 @@ const Login = () => {
         const email = form.email.value
         const password = form.password.value
 
-        const tokenData = { email }
-
         loginUser(email, password)
             .then(() => {
                 Swal.fire(
@@ -29,8 +28,6 @@ const Login = () => {
                     'Login Successful!',
                     'success'
                 )
-                axios.post('https://luxe-next-server.vercel.app/jwt', tokenData, { withCredentials: true })
-                    .then(res => console.log(res.data))
                 location.state ? navigate(location.state) : navigate('/')
             })
             .catch(error => {
@@ -53,9 +50,6 @@ const Login = () => {
                     'Login Successful!',
                     'success'
                 )
-                axios.post('https://luxe-next-server.vercel.app/jwt', { ami: 'asi' }, { withCredentials: true })
-                    .then(res => console.log(res.data))
-                location.state ? navigate(location.state) : navigate('/')
             })
             .catch(error => {
                 Swal.fire({

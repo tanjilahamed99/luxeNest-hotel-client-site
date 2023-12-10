@@ -2,12 +2,14 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged,
 import PropTypes from 'prop-types';
 import { createContext, useEffect, useState } from 'react';
 import auth from '../Firebase/firebse';
+import axios from 'axios';
 
 
 export const AuthContext = createContext()
 
 const AuthProvider = ({ children }) => {
 
+    const googleProvider = new GoogleAuthProvider()
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
 
@@ -22,11 +24,10 @@ const AuthProvider = ({ children }) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
+
     const logoutUser = () => {
         return signOut(auth)
     }
-
-    const googleProvider = new GoogleAuthProvider()
 
     const googleLogin = () => {
         return signInWithPopup(auth, googleProvider)
@@ -35,6 +36,10 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (user) => {
             setUser(user)
+            if (user) {
+                axios.post('https://luxe-next-server.vercel.app/jwt', { email: user.email }, { withCredentials: true })
+                    .then(res => console.log(res.data))
+            }
             setLoading(false)
         });
         return () => {
@@ -45,8 +50,8 @@ const AuthProvider = ({ children }) => {
 
     const authData = {
         createUser,
-        loginUser,
         logoutUser,
+        loginUser,
         user,
         loading,
         googleLogin

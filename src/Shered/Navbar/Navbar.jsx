@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import Context from "../../Hooks/Contex";
 import Swal from "sweetalert2";
 import axios from "axios";
-import DisplayCustomToast from "../../Custom Toast/DisplayCustomToast";
+// import DisplayCustomToast from "../../Custom Toast/DisplayCustomToast";g
 
 const Navbar = () => {
 
@@ -76,9 +76,6 @@ const Navbar = () => {
             >
                 About
             </NavLink>
-        </li>
-        <li>
-            <DisplayCustomToast></DisplayCustomToast>
         </li>
         <div className="navbar-end  md:hidden">
             <hr className="w-full border my-3" />

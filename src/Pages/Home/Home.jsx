@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import Footer from "../../Shered/Footer/Footer";
 import Navbar from "../../Shered/Navbar/Navbar";
-import SimpleMap from "./Map/Map";
+// import SimpleMap from "./Map/Map";
 import Sliders from "./Sliders/Sliders";
 import SpecialOffer from "./SpecialOfFer/SpecialOffer";
 import StunningImages from "./StunningImages/StunningImages";
@@ -21,7 +21,7 @@ const Home = () => {
             <Sliders></Sliders>
             <Testimonial></Testimonial>
             <SpecialOffer></SpecialOffer>
-            <SimpleMap></SimpleMap>
+            {/* <SimpleMap></SimpleMap> */}
             <NewsLatter></NewsLatter>
             <Footer></Footer>
         </div>

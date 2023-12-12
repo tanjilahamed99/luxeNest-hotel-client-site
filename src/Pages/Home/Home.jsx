@@ -6,6 +6,7 @@ import Sliders from "./Sliders/Sliders";
 import SpecialOffer from "./SpecialOfFer/SpecialOffer";
 import StunningImages from "./StunningImages/StunningImages";
 import Testimonial from "./Testimonial/Testimonial";
+import NewsLatter from "./NewsLatter/NewsLatter";
 
 const Home = () => {
     return (
@@ -21,6 +22,7 @@ const Home = () => {
             <Testimonial></Testimonial>
             <SpecialOffer></SpecialOffer>
             <SimpleMap></SimpleMap>
+            <NewsLatter></NewsLatter>
             <Footer></Footer>
         </div>
     );

@@ -2,7 +2,7 @@ import { FaStar } from "react-icons/fa";
 
 const Testimonial = () => {
     return (
-        <div data-aos="fade-up"
+        <div data-aos="fade-right"
             data-aos-delay="50" className="container mx-auto my-20">
             <h2 className="text-xl font-medium text-center">OUR TESTIMONIALS</h2>
             <h2 className="text-3xl font-semibold text-center my-2 text-[#1e1e1e]">Feedback From Our Guests</h2>

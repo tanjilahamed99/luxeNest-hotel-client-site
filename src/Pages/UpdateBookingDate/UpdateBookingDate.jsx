@@ -28,7 +28,7 @@ const UpdateBookingDate = () => {
             _id
         }
 
-        axios.post('https://luxe-next-server.vercel.app/updateDate', newDate)
+        axios.post('http://localhost:5000/updateDate', newDate)
             .then(res => {
                 if (res.data.modifiedCount) {
                     Swal.fire(

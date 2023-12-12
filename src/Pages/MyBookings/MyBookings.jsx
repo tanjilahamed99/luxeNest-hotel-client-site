@@ -15,7 +15,7 @@ const MyBookings = () => {
     const [myRoom, setMyRoom] = useState([])
 
     useEffect(() => {
-        axios.get(`https://luxe-next-server.vercel.app/roomBooking?email=${user.email}`, { withCredentials: true })
+        axios.get(`http://localhost:5000/roomBooking?email=${user.email}`, { withCredentials: true })
             .then(res => setMyRoom(res.data))
     }, [user])
 
@@ -41,13 +41,13 @@ const MyBookings = () => {
                 confirmButtonText: "Yes, delete it!"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`https://luxe-next-server.vercel.app/roomBooking/${id}`, {
+                    fetch(`http://localhost:5000/roomBooking/${id}`, {
                         method: "DELETE"
                     })
                         .then(res => res.json())
                         .then(data => {
                             if (data.deletedCount) {
-                                axios.put('https://luxe-next-server.vercel.app/delateUpdate', updateRoom)
+                                axios.put('http://localhost:5000/delateUpdate', updateRoom)
                                     .then((res) => {
                                         Swal.fire(
                                             'Good job!',

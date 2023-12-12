@@ -9,7 +9,7 @@ const RoomsCard = () => {
 
 
     useEffect(() => {
-        axios(`https://luxe-next-server.vercel.app/rooms?shortFlied=${shortFlied}&shortOrder=${shortOrder}`)
+        axios(`http://localhost:5000/rooms?shortFlied=${shortFlied}&shortOrder=${shortOrder}`)
             .then(res => setRooms(res.data))
     }, [shortOrder, shortFlied])
 

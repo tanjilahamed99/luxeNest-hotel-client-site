@@ -16,7 +16,7 @@ const Navbar = () => {
                     'Log out Successful',
                     'success'
                 )
-                axios.post('https://luxe-next-server.vercel.app/logout', { email: user.email }, { withCredentials: true })
+                axios.post('http://localhost:5000/logout', { email: user.email }, { withCredentials: true })
                     .then(res => console.log(res.data))
             })
             .catch(() => {

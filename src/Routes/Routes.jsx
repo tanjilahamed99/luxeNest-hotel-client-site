@@ -47,7 +47,7 @@ const Routes = createBrowserRouter([
             {
                 path: '/roomDetail/:id',
                 element: <RoomDetail></RoomDetail>,
-                loader: ({ params }) => fetch(`https://luxe-next-server.vercel.app/roomDetail/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/roomDetail/${params.id}`)
             },
             {
                 path: '/myBookings',
@@ -56,7 +56,7 @@ const Routes = createBrowserRouter([
             {
                 path: '/updateBookingDate/:id',
                 element: <UpdateBookingDate></UpdateBookingDate>,
-                loader: ({ params }) => fetch(`https://luxe-next-server.vercel.app/updateDate/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/updateDate/${params.id}`)
             }
         ]
     }

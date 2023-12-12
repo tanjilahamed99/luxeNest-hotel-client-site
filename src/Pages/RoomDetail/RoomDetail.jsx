@@ -25,7 +25,7 @@ const RoomDetail = () => {
 
     useEffect(() => {
 
-        axios(`http://localhost:5000/review?roomType=${roomType}`)
+        axios(`https://luxe-next-server.vercel.app/review?roomType=${roomType}`)
             .then(res => setReview(res?.data))
     }, [roomType])
 
@@ -49,10 +49,10 @@ const RoomDetail = () => {
 
         if (user) {
             if (available) {
-                axios.post(`http://localhost:5000/roomBooking`, newBooking)
+                axios.post(`https://luxe-next-server.vercel.app/roomBooking`, newBooking)
                     .then(res => {
                         if (res.data.acknowledged) {
-                            axios.put('http://localhost:5000/updateRoom', updateRoom)
+                            axios.put('https://luxe-next-server.vercel.app/updateRoom', updateRoom)
                                 .then(() => {
                                     Swal.fire(
                                         'Good job!',
@@ -91,7 +91,7 @@ const RoomDetail = () => {
             userName, reviewRating, comment, roomType, time, img: user.photoURL
         }
 
-        axios.post('http://localhost:5000/review', reviewData)
+        axios.post('https://luxe-next-server.vercel.app/review', reviewData)
             .then(res => {
                 if (res.data.acknowledged) {
                     Swal.fire(

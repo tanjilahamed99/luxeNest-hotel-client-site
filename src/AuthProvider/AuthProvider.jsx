@@ -37,7 +37,7 @@ const AuthProvider = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, (user) => {
             setUser(user)
             if (user) {
-                axios.post('http://localhost:5000/jwt', { email: user.email }, { withCredentials: true })
+                axios.post('https://luxe-next-server.vercel.app/jwt', { email: user.email }, { withCredentials: true })
                     .then(res => console.log(res.data))
             }
             setLoading(false)

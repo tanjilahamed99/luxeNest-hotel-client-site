@@ -37,6 +37,7 @@ const StunningImages = () => {
             },
         ]
     )
+
     return (
         <>
             <div ref={sliderRef} className="keen-slider">

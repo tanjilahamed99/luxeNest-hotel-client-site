@@ -2,12 +2,11 @@ import { Helmet } from "react-helmet";
 import Footer from "../../Shered/Footer/Footer";
 import Navbar from "../../Shered/Navbar/Navbar";
 import Sliders from "./Sliders/Sliders";
-import SpecialOffer from "./SpecialOfFer/SpecialOffer";
 import StunningImages from "./StunningImages/StunningImages";
 import Testimonial from "./Testimonial/Testimonial";
-import NewsLatter from "./NewsLatter/NewsLatter";
 import HomeAbout from "./HomeAbout/HomeAbout";
 import Photo from "./Photo/Photo";
+import Event from "./Event/Event";
 
 const Home = () => {
     return (
@@ -23,8 +22,7 @@ const Home = () => {
             <Testimonial></Testimonial>
             <HomeAbout></HomeAbout>
             <Photo></Photo>
-            {/* <SpecialOffer></SpecialOffer> */}
-            {/* <NewsLatter></NewsLatter> */}
+            <Event></Event>
             <Footer></Footer>
         </div>
     );

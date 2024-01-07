@@ -5,7 +5,10 @@ const Photo = () => {
         >
             <div></div>
             <div className="text-center bg-black text-white  bg-opacity-30">
-                <div className="top-[33%] relative space-y-5">
+                <div
+                    data-aos="fade-left"
+                    data-aos-duration="1500"
+                    className="top-[33%] relative space-y-5">
                     <img className="w-40 mx-auto" src="https://i.ibb.co/dB7Hhyg/pngwing-com-23.png" alt="" />
                     <h2 className="text-3xl font-bold ">Certificate of Excellence Based <br /> on 329 Reviews</h2>
                     <button className="btn btn-outline font-light text-white">Read More</button>

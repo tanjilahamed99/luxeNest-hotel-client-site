@@ -7,6 +7,7 @@ import Testimonial from "./Testimonial/Testimonial";
 import HomeAbout from "./HomeAbout/HomeAbout";
 import Photo from "./Photo/Photo";
 import Event from "./Event/Event";
+import HomeContact from "./HomeContact/HomeContact";
 
 const Home = () => {
     return (
@@ -23,6 +24,7 @@ const Home = () => {
             <HomeAbout></HomeAbout>
             <Photo></Photo>
             <Event></Event>
+            <HomeContact></HomeContact>
             <Footer></Footer>
         </div>
     );

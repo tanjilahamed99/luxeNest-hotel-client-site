@@ -8,6 +8,9 @@ import HomeAbout from "./HomeAbout/HomeAbout";
 import Photo from "./Photo/Photo";
 import Event from "./Event/Event";
 import HomeContact from "./HomeContact/HomeContact";
+import Restaurant from "./Restaurant/Resturant";
+import Food from "./Food/Food";
+import Spa from "./Spa/Spa";
 
 const Home = () => {
     return (
@@ -24,6 +27,9 @@ const Home = () => {
             <HomeAbout></HomeAbout>
             <Event></Event>
             <Photo></Photo>
+            <Restaurant></Restaurant>
+            <Spa></Spa>
+            <Food></Food>
             <HomeContact></HomeContact>
             <Footer></Footer>
         </div>

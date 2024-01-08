@@ -11,7 +11,7 @@ const Event = () => {
                 <h1 className="text-sm font-bold text-[#ccc1bd]">SUBMIT YOUR EMAIL TO GET THE LATEST OFFERS</h1>
                 <h2 className="text-4xl font-semibold mt-4 mb-8">Sign up for news</h2>
                 <div
-                    data-aos="fade-left"
+                    data-aos="fade-right"
                     data-aos-duration="1500"
                     className="border border-black md:p-20 p-10 rounded-md  space-y-5">
                     <input className="block border-b border-black w-full mb-3 p-2 md:text-xl text-black" placeholder="Type Your Email" type="text" />

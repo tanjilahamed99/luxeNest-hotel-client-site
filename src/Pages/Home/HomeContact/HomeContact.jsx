@@ -13,8 +13,8 @@ const HomeContact = () => {
                 <h2 className="text-sm font-light txt-3xl">RESERVATION FORM</h2>
                 <h3 className="text-4xl my-5 mb-7">Ask before booking</h3>
                 <form
-                    // data-aos="fade-left"
-                    // data-aos-duration="1500"
+                    data-aos="fade-up"
+                    data-aos-duration="1500"
                     className="border border-black py-20 px-10  rounded-md  space-y-7">
 
                     {/* <input className="" placeholder="message" type="text" /> */}

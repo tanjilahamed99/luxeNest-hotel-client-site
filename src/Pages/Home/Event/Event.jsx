@@ -2,7 +2,7 @@ const Event = () => {
     return (
         <div className="flex lg:flex-row flex-col gap-10 px-10 my-20">
             <div className="lg:w-[60%]">
-                <h2 className="text-[80px] text-[#ccc1bd] font-light leading-[80px]">Events & <br /> Activities</h2>
+                <h2 className="md:text-[80px] text-4xl text-[#ccc1bd] font-light md:leading-[80px]">Events & <br /> Activities</h2>
                 <p className="text-[#797776] mt-10 lg:pl-40">
                     Welcome to LuxeNext, where luxury meets comfort in every detail. Indulge in our meticulously designed hotel rooms, featuring modern aesthetics, plush furnishings, and state-of-the-art amenities. Your retreat at LuxeNext promises a seamless blend of sophistication and relaxation, offering a haven of opulence that exceeds expectations. Immerse yourself in a world of refined elegance and unparalleled comfort at LuxeNext.
                 </p>
@@ -13,8 +13,8 @@ const Event = () => {
                 <div
                     data-aos="fade-left"
                     data-aos-duration="1500"
-                    className="border border-black p-20 rounded-md  space-y-5">
-                    <input className="block border-b border-black w-full mb-3 p-2 text-xl text-black" placeholder="Type Your Email" type="text" />
+                    className="border border-black md:p-20 p-10 rounded-md  space-y-5">
+                    <input className="block border-b border-black w-full mb-3 p-2 md:text-xl text-black" placeholder="Type Your Email" type="text" />
                     <button className="btn btn-outline font-light">Submit</button>
                 </div>
             </div>

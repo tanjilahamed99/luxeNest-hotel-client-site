@@ -14,7 +14,7 @@ const Faq = () => {
 
             <div className="my-20">
                 <h2 className="text-3xl text-center font-semibold mb-5">Most Common Question ABout Us</h2>
-                <div className="space-y-4 w-[80%] mx-auto">
+                <div className="space-y-10 w-[80%] mx-auto">
                     <div tabIndex={0} className="collapse border border-base-300 bg-base-200">
                         <div className="collapse-title text-xl font-medium">
                             What types of rooms do you offer?

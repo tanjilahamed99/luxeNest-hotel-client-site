@@ -2,7 +2,7 @@ const Restaurant = () => {
     return (
         <div className="my-20 w-full px-5">
             <div className=" relative lg:w-[700px] md:w-[500px] mx-auto">
-                <img className="w-full lg:h-[460px]" src="https://i.ibb.co/0QLVBDr/pexels-chan-walrus-941861.jpg" alt="" />
+                <img className="w-full lg:h-[460px]" src="https://i.ibb.co/920Fd46/japanese-japan-restaurant-culture.jpg" alt="" />
                 <div
                     data-aos="fade-right"
                     data-aos-duration="1500"

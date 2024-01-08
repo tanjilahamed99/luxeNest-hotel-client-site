@@ -25,8 +25,8 @@ const Home = () => {
             <Sliders></Sliders>
             <Testimonial></Testimonial>
             <HomeAbout></HomeAbout>
-            <Event></Event>
             <Photo></Photo>
+            <Event></Event>
             <Restaurant></Restaurant>
             <Spa></Spa>
             <Food></Food>

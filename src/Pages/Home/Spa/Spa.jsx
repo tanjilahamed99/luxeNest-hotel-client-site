@@ -2,7 +2,7 @@ const Spa = () => {
     return (
         <div className="my-40 w-full px-5">
             <div className=" relative lg:w-[700px] md:w-[500px] mx-auto lg:mx-0 lg:ml-40">
-                <img className="w-full lg:h-[460px]" src="https://i.ibb.co/bNbQLsb/Spa.jpg" alt="" />
+                <img className="w-full lg:h-[460px]" src="https://i.ibb.co/GfDQSTk/tzoo-hd-33758-18074-spa-gift-certificate.jpg" alt="" />
                 <div
                     data-aos="fade-up"
                     data-aos-duration="1500"

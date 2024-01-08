@@ -42,14 +42,14 @@ const StunningImages = () => {
         <>
             <div ref={sliderRef} className="keen-slider">
                 <div className="keen-slider__slide bg-cover bg-center number-slide1 w-full h-[100vh] image-full"
-                    style={{ backgroundImage: 'url(https://i.ibb.co/m5ZRfGc/istockphoto-1334117334-612x612.jpg)' }}
+                    style={{ backgroundImage: 'url(https://i.ibb.co/TgJYG0T/hotel-1.jpg)' }}
                 >
                     <div className="w-full">
                         <img className="w-full mx-auto   image-full" src="" alt="" />
                     </div>
                 </div>
                 <div className="keen-slider__slide bg-cover bg-center number-slide2 w-full h-[100vh] image-full"
-                    style={{ backgroundImage: 'url(https://i.ibb.co/vsVWB7w/miami-florida-hotel-room-wallpaper-thumb.jpg)' }}
+                    style={{ backgroundImage: 'url(https://i.ibb.co/1GzytYW/hotel-2.jpg)' }}
                 >
                     <div className="w-full">
                         <img className="w-full mx-auto   image-full" src="" alt="" />
@@ -63,7 +63,7 @@ const StunningImages = () => {
                     </div>
                 </div>
                 <div className="keen-slider__slide bg-cover bg-center number-slide4 w-full h-[100vh] image-full"
-                    style={{ backgroundImage: 'url(https://i.ibb.co/8gyzsj8/istockphoto-1452529483-612x612.jpg)' }}
+                    style={{ backgroundImage: 'url(https://i.ibb.co/B23hGTY/hotel-5.jpg)' }}
                 >
                     <div className="w-full">
                         <img className="w-full mx-auto   image-full" src="" alt="" />

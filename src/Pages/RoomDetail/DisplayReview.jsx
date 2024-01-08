@@ -18,7 +18,7 @@ const DisplayReview = ({ info }) => {
                         </div>
                     </div>
                     <div className='flex items-center gap-5'>
-                    <Rating className="text-2xl"
+                    <Rating className="text-2xl text-yellow-500"
                         placeholderRating={reviewRating}
                         emptySymbol={<FaRegStar></FaRegStar>}
                         placeholderSymbol={<FaStar></FaStar>}

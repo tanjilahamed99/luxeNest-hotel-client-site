@@ -26,7 +26,7 @@ const RoomsCard = () => {
                     </ul>
                 </details>
             </div>
-            <div className="grid gap-10 container mx-auto   justify-center  md:grid-cols-2 mt-10 grid-cols-1 lg:grid-cols-3 items-center ">
+            <div className="grid xl:gap-20 gap-10 px-1 md:px-5  container mx-auto justify-center  md:grid-cols-2 mt-10 grid-cols-1 lg:grid-cols-3 items-center ">
                 {
                     rooms.map(room => <DisplayRooms key={room._id} room={room}></DisplayRooms>)
                 }

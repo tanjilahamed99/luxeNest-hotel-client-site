@@ -119,27 +119,27 @@ const RoomDetail = () => {
                 <div className="hero my-10 w-full">
                     <div className="hero-content flex-col lg:flex-row w-full gap-5">
                         <div className="lg:w-[60%] w-full">
-                            <img src={img} className=" h-[550px] w-full rounded-lg shadow-2xl" />
+                            <img src={img} className=" h-[300px] md:h-[450px] lg:h-[550px] w-full rounded-lg shadow-2xl" />
                         </div>
                         <div className="lg:w-[40%] w-full">
-                            <form onSubmit={handleRoomBooking} className="card-body w-full bg-[#f8f6f3]">
+                            <form onSubmit={handleRoomBooking} className="md:card-body space-y-3 w-full bg-[#f8f6f3]">
                                 <div>
-                                    <h2 className="bg-white p-4 font-semibold text-lg">Room : <span className="text-[#c19d68]">{roomType}</span></h2>
+                                    <h2 className="bg-white p-2 lg:p-4 font-semibold text-lg">Room : <span className="text-[#c19d68]">{roomType}</span></h2>
                                 </div>
                                 <div>
-                                    <h2 className="bg-white p-4 font-semibold text-lg">Price  : <span className="text-[#c19d68]">{pricePerNight}$ per Night</span></h2>
+                                    <h2 className="bg-white p-2 lg:p-4 font-semibold text-lg">Price  : <span className="text-[#c19d68]">{pricePerNight}$ per Night</span></h2>
                                 </div>
                                 <div>
-                                    <h2 className="bg-white p-4 font-semibold text-lg">Available  : <span className="text-[#c19d68]">{available ? 'Available' : 'Already booking'}</span></h2>
+                                    <h2 className="bg-white p-2 lg:p-4 font-semibold text-lg">Available  : <span className="text-[#c19d68]">{available ? 'Available' : 'Already booking'}</span></h2>
                                 </div>
                                 <div>
-                                    <h2 className="bg-white p-4 font-semibold text-lg">Beds : <span className="text-[#c19d68]">{beds}</span></h2>
+                                    <h2 className="bg-white p-2 lg:p-4 font-semibold text-lg">Beds : <span className="text-[#c19d68]">{beds}</span></h2>
                                 </div>
                                 <div>
-                                    <h2 className="bg-white p-4 font-semibold text-lg">Check in : <input type="date" name="checkIn" id="" required /></h2>
+                                    <h2 className="bg-white p-2 lg:p-4 font-semibold text-lg">Check in : <input type="date" name="checkIn" id="" required /></h2>
                                 </div>
                                 <div>
-                                    <h2 className="bg-white p-4 font-semibold text-lg">Check Out : <input type="date" name="checkOut" id="" required /></h2>
+                                    <h2 className="bg-white p-2 lg:p-4 font-semibold text-lg">Check Out : <input type="date" name="checkOut" id="" required /></h2>
                                 </div>
                                 <div className="form-control mt-6">
                                     <button className="btn btn-outline w-fit">Booking Now</button>
@@ -148,14 +148,14 @@ const RoomDetail = () => {
                         </div>
                     </div>
                 </div>
-                <div className="mt-5 px-12 flex md:flex-row flex-col gap-20">
+                <div className="mt-5 md:px-12 px-5 flex md:flex-row flex-col gap-20">
                     <div className="lg:w-[60%]">
                         <h2 className="font-semibold ">LUXURY ROOM</h2>
                         <h1 className="font-bold text-3xl  my-3">{roomType}</h1>
                         <p>{description}</p>
-                        <div className="my-10 flex flex-col md:flex-row items-center gap-5 justify-between">
+                        <div className="my-10 flex flex-col md:flex-row md:items-center gap-5 justify-between">
                             <h2 className="font-semibold text-lg">Room size: {roomSize}</h2>
-                            <div>
+                            <div className="text-yellow-500">
                                 <Rating className="text-2xl"
                                     placeholderRating={rating}
                                     emptySymbol={<FaRegStar></FaRegStar>}
@@ -192,7 +192,7 @@ const RoomDetail = () => {
                     </div>
                 </div>
                 {/* review */}
-                <div className="px-12  my-10">
+                <div className="md:px-12 px-4  my-10">
                     <h2 className="text-2xl font-semibold">Room Reviews</h2>
 
                     <div className="grid grid-cols-1 justify-center md:grid-cols-2 items-center gap-10">
@@ -205,15 +205,15 @@ const RoomDetail = () => {
                     </div>
                     <div className="my-20">
                         <h2 className="text-center text-2xl font-semibold">Set Your own Review</h2>
-                        <p className="text-center xl:mx-72 mx-10 font-medium my-2"> A hotel room is a carefully crafted and welcoming space within a hotel that serves  a travelers home away from home. Designed for comfort and relaxation </p>
+                        <p className="text-center xl:mx-72 md:mx-10 font-medium my-2"> A hotel room is a carefully crafted and welcoming space within a hotel that serves  a travelers home away from home. Designed for comfort and relaxation </p>
                         <form onSubmit={handleReview} className="card-body mx-auto grid md:grid-cols-2 grid-cols-1 gap-5 justify-center items-center w-[95%] lg:w-[60%]">
-                            <div className="form-control mx-auto w-full">
+                            <div className="form-control mx-auto w-full col-span-2 md:col-span-1">
                                 <label className="label">
                                     <span className="label-text">User Name</span>
                                 </label>
                                 <input name="userName" required type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
                             </div>
-                            <div className="form-control mx-auto w-full">
+                            <div className="form-control mx-auto w-full col-span-2 md:col-span-1">
                                 <label className="label">
                                     <span className="label-text">Rating</span>
                                 </label>

@@ -8,9 +8,9 @@ const DisplayRooms = ({ room }) => {
 
 
     return (
-        <Link to={`/roomDetail/${_id}`} className=' shadow-md mx-auto  hover:shadow-lg pb-5'>
+        <Link to={`/roomDetail/${_id}`} className=' shadow-md hover:shadow-lg pb-5'>
             <div className='relative '>
-                <img className='h-[250px] w-[300px] mx-auto' src={img} alt="" />
+                <img className='h-[250px] w-full mx-auto' src={img} alt="" />
                 <div className='flex items-center gap-2 absolute top-3 right-3 bg-blue-500 p-3 text-white rounded-md '>
                     <p className=''>${pricePerNight}</p>
                     <h2>/Per Night</h2>
@@ -30,7 +30,7 @@ const DisplayRooms = ({ room }) => {
                     <h2 className='flex gap-2 items-center text-[#616161]'><FaBed className='text-2xl'></FaBed><span className='text-lg'>{beds} King Beds</span></h2>
                 </div>
                 <div>
-                        <Rating className="text-2xl"
+                        <Rating className="text-2xl text-yellow-500"
                             placeholderRating={rating}
                             emptySymbol={<FaRegStar></FaRegStar>}
                             placeholderSymbol={<FaStar></FaStar>}

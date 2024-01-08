@@ -4,7 +4,7 @@ const AboutUs = () => {
             <div className="lg:w-1/2">
                 <img  src="https://i.ibb.co/svLmhK5/leisure-beautiful-health-garden-landscape.jpg" alt="" />
             </div>
-            <div className="lg:w-1/2 space-y-3">
+            <div className="lg:w-1/2 space-y-3 px-5">
                 <h2 className="text-[#c19d68] font-medium">Task Management Website</h2>
                 <h3 className="text-3xl font-semibold text-[#1e1e1e]">LUXURY BEST HOTEL IN CITY CALIFORNIA, USA</h3>
                 <p className="text-[#616161]">Rapidiously myocardinate cross-platform intellectual capital after marketing model. Appropriately create interactive infrastructures after</p>

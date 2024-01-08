@@ -7,7 +7,10 @@ const Facilities = () => {
             <h2 className="text-center text-3xl font-semibold">HOTEL’S FACILITIES</h2>
             <p className="xl:mx-96 md:mx-20 text-center mt-3">Proactively morph optimal infomediaries rather than accurate expertise. Intrinsicly progressive resources rather than resource-leveling</p>
 
-            <div className="grid grid-cols-1 mt-10 justify-center items-center gap-10 md:grid-cols-2 lg:grid-cols-5">
+            <div
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                className="grid grid-cols-1 mt-10 justify-center items-center gap-10 md:grid-cols-2 lg:grid-cols-5">
                 <div className="bg-white text-[#c19d68] text-center h-[200px] w-[200px] p-10 mx-auto rounded-lg hover:bg-[#c19d68] hover:text-white">
                     <FaBed className="text-5xl text-center mx-auto mt-5"></FaBed>
                     <h2 className="font-bold text-lg mt-3">Room Service</h2>

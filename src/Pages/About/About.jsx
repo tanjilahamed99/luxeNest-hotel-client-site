@@ -17,7 +17,7 @@ const About = () => {
             <Navbar></Navbar>
             <AboutBanner></AboutBanner>
             <AboutUs></AboutUs>
-            <Facilities></Facilities>
+            <Facrilities></Facilities>
             <MeetEmploys></MeetEmploys>
             <Footer></Footer>
         </div>

@@ -2,7 +2,8 @@ import { Link, NavLink } from "react-router-dom";
 import Context from "../../Hooks/Contex";
 import Swal from "sweetalert2";
 import axios from "axios";
-// import DisplayCustomToast from "../../Custom Toast/DisplayCustomToast";g
+// import DisplayCustomToast from "../../Custom Toast/DisplayCustomToast";
+import logo from "../../../public/images/1.png";
 
 const Navbar = () => {
   const { user, logoutUser } = Context();
@@ -28,11 +29,7 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? " border-b border-white"
-              : ""
+            isPending ? "pending" : isActive ? " border-b border-white" : ""
           }
         >
           Home
@@ -42,11 +39,7 @@ const Navbar = () => {
         <NavLink
           to="/rooms"
           className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? " border-b border-white"
-              : ""
+            isPending ? "pending" : isActive ? " border-b border-white" : ""
           }
         >
           Rooms
@@ -57,11 +50,7 @@ const Navbar = () => {
           <NavLink
             to="/myBookings"
             className={({ isActive, isPending }) =>
-              isPending
-                ? "pending"
-                : isActive
-                ? " border-b  border-white"
-                : ""
+              isPending ? "pending" : isActive ? " border-b  border-white" : ""
             }
           >
             My Bookings
@@ -72,11 +61,7 @@ const Navbar = () => {
         <NavLink
           to="/menu"
           className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? " border-b border-white"
-              : ""
+            isPending ? "pending" : isActive ? " border-b border-white" : ""
           }
         >
           Our Menu
@@ -86,11 +71,7 @@ const Navbar = () => {
         <NavLink
           to="/about"
           className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? " border-b border-white"
-              : ""
+            isPending ? "pending" : isActive ? " border-b border-white" : ""
           }
         >
           About
@@ -121,7 +102,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-opacity-30 bg-black xl:px-20 lg:px-5 absolute z-10">
+    <div className="navbar bg-opacity-25 bg-black xl:px-20 lg:px-5 absolute z-10">
       <div className="navbar-start  flex  items-center gap-20 lg:gap-0 ">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -149,18 +130,21 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-3 mx-auto lg:mx-0">
           <img
-            className="md:w-20 w-10"
-            src="https://i.ibb.co/rbRG54Z/download.png"
+            className="w-10 rounded-full"
+            // src="https://i.ibb.co/rbRG54Z/download.png"
+            src={logo}
             alt=""
           />
-          <div className="">
-            <h2 className="text-2xl font-bold">LuxeNest</h2>
-            <p>Luxury Hotel</p>
+          <div className=" text-white">
+            <h2 className="text-xl font-bold">LuxeNest</h2>
+            <p className="text-sm">Luxury Hotel</p>
           </div>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 text-lg text-white">{ulLinks}</ul>
+        <ul className="menu menu-horizontal px-1 text-lg text-white">
+          {ulLinks}
+        </ul>
       </div>
       <div className="navbar-end">
         {user && (

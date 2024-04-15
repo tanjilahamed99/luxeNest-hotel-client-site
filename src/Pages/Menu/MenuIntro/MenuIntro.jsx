@@ -1,10 +1,10 @@
 const MenuIntro = () => {
     return (
-        <div className="lg:w-[70%] w-full px-5 mx-auto my-10 md:my-20">
+        <div className="lg:w-[70%] w-full px-2 mx-auto my-10 md:my-20">
             <h2 className="md:text-[80px] text-3xl text-[#ccc1bd] font-light">
                 Bon Appétit
             </h2>
-            <div className="flex flex-col md:flex-row justify-between md:gap-20 gap-5 lg:mt-20 mt-10 text-lg">
+            <div className="flex flex-col md:flex-row justify-between md:gap-20 gap-5 lg:mt-20 md:mt-10 mt-2 text-lg">
                 <p>
                     Savor a symphony of flavors at LuxeNext, where each dish is a masterpiece crafted with passion and precision. Our Foods Menus page invites you on a gastronomic journey, showcasing a curated selection of exquisite dishes prepared by our culinary artisans.
                 </p>

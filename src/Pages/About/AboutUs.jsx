@@ -6,10 +6,10 @@ const AboutUs = () => {
             </div>
             <div className="lg:w-1/2 space-y-3 px-5">
                 <h2 className="text-[#c19d68] font-medium">Task Management Website</h2>
-                <h3 className="text-3xl font-semibold text-[#1e1e1e]">LUXURY BEST HOTEL IN CITY CALIFORNIA, USA</h3>
+                <h3 className="md:text-3xl text-xl font-semibold text-[#1e1e1e]">LUXURY BEST HOTEL IN CITY CALIFORNIA, USA</h3>
                 <p className="text-[#616161]">Rapidiously myocardinate cross-platform intellectual capital after marketing model. Appropriately create interactive infrastructures after</p>
                 <p>Rapidiously myocardinate cross-platform intellectual capital after marketing model. Appropriately create interactive infrastructures after maintainable are Holisticly facilitate stand-alone inframe</p>
-                <div className="bg-[#f8f6f3] p-5 text-lg font-semibold rounded-md">
+                <div className="bg-[#f8f6f3] p-5 text-sm md:text-lg font-semibold rounded-md">
                     <h2>102/B, Saheprotap, Narsingdi - 1212</h2>
                 </div>
                 <button className="btn btn-outline">About More</button>

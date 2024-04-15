@@ -28,7 +28,7 @@ const Footer = () => {
                     <a className="link link-hover">Cookie policy</a>
                 </nav>
             </footer>
-            <hr className="border border-black" />
+            <hr className="border-t border-black " />
             <div className="footer footer-center p-4 text-base-content">
                 <aside>
                     <p>Copyright © 2023 - All right reserved by <span className="font-semibold">LuxeNest Hotel</span></p>

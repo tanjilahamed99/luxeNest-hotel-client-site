@@ -5,8 +5,8 @@ const Desert = () => {
                 <h2 className="text-sm font-bold">STARTERS</h2>
                 <h2 className="text-5xl font-light">Desert</h2>
             </div>
-            <div className="mt-10 w-[80%] mx-auto flex flex-col lg:flex-row gap-20">
-                <div className="space-y-10 lg:w-1/2">
+            <div className="mt-10 md:w-[80%] mx-auto flex flex-col lg:flex-row gap-20">
+                <div className="space-y-10 lg:w-1/2 px-2">
                     <div>
                         <div className="flex gap-5 justify-between mb-3">
                             <h2 className="text-xl">Best Augustine Appetizer Combo</h2>
@@ -36,7 +36,7 @@ const Desert = () => {
                         <p className="text-lg">seared dumplings, chicken, ginger, garlic, yellow chives, onions</p>
                     </div>
                 </div>
-                <div className="space-y-10 lg:w-1/2">
+                <div className="space-y-10 lg:w-1/2 px-2">
                     <div>
                         <div className="flex gap-5 justify-between mb-3">
                             <h2 className="text-xl">Best Augustine Appetizer Combo</h2>

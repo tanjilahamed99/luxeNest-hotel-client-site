@@ -36,9 +36,9 @@ const Testimonial = () => {
 
   return (
     <div
-      data-aos="fade-right"
+      data-aos="fade-left"
       data-aos-delay="50"
-      className="container mx-auto my-20"
+      className="container mx-auto my-10 lg:my-20 overflow-x-hidden"
     >
       {/* swiper slider */}
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
@@ -52,7 +52,7 @@ const Testimonial = () => {
                 <FaStar className=""></FaStar>
                 <FaStar className=""></FaStar>
               </div>
-              <p className="text-lg font-medium lg:px-40">{i.desc}</p>
+              <p className="lg:text-lg text-sm font-medium lg:px-40 px-12">{i.desc}</p>
               <h2 className="text-sm font-bold">{i.name}</h2>
             </div>
           </SwiperSlide>

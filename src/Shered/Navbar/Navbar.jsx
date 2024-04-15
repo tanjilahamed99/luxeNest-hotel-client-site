@@ -103,8 +103,8 @@ const Navbar = () => {
 
   return (
     <div className="navbar bg-opacity-25 bg-black xl:px-20 lg:px-5 absolute z-10">
-      <div className="navbar-start  flex  items-center gap-20 lg:gap-0 ">
-        <div className="dropdown">
+      <div className="navbar-start  flex gap-3  items-center lg:gap-0">
+        <div className="dropdown text-white">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +123,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm text-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm text-lg dropdown-content text-black mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             {ulLinks}
           </ul>
@@ -141,26 +141,28 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-lg text-white">
           {ulLinks}
         </ul>
       </div>
-      <div className="navbar-end">
+
+      <div className="navbar-end ">
         {user && (
-          <div className="avatar mx-3 online hidden md:flex">
+          <div className="avatar mx-3 online">
             <div className="w-10 h-10 rounded-full ">
               <img src={user.photoURL} />
             </div>
           </div>
         )}
         {user ? (
-          <li onClick={handleLogOut} className="btn btn-outline hidden md:flex">
+          <li onClick={handleLogOut} className="btn btn-outline">
             Logout
           </li>
         ) : (
           <Link to={"/login"}>
-            <li className="btn btn-outline hidden md:flex">Login</li>
+            <li className="btn btn-outline border-white text-white">Login</li>
           </Link>
         )}
       </div>

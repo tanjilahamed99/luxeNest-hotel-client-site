@@ -13,27 +13,27 @@ import Food from "./Food/Food";
 import Spa from "./Spa/Spa";
 
 const Home = () => {
-    return (
-        <div>
-            <Helmet>
-                <meta charSet="utf-8" />
-                <title>Home LuxeNest Hotel</title>
-                <link rel="canonical" href="http://mysite.com/example" />
-            </Helmet>
-            <Navbar></Navbar>
-            <StunningImages></StunningImages>
-            <Sliders></Sliders>
-            <Testimonial></Testimonial>
-            <HomeAbout></HomeAbout>
-            <Photo></Photo>
-            <Event></Event>
-            <Restaurant></Restaurant>
-            <Spa></Spa>
-            <Food></Food>
-            <HomeContact></HomeContact>
-            <Footer></Footer>
-        </div>
-    );
+  return (
+    <div className="">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home LuxeNest Hotel</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+      <Navbar></Navbar>
+      <StunningImages></StunningImages>
+      <Sliders></Sliders>
+      <Testimonial></Testimonial>
+      <HomeAbout></HomeAbout>
+      <Photo></Photo>
+      <Event></Event>
+      <Restaurant></Restaurant>
+      <Spa></Spa>
+      <Food></Food>
+      <HomeContact></HomeContact>
+      <Footer></Footer>
+    </div>
+  );
 };
 
 export default Home;
